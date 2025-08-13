@@ -18,6 +18,15 @@
         .h-font{
             font-family: 'Merienda', cursive;
         }
+        /* Removes arrows and spin from inputs */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 
 </head>
@@ -112,35 +121,57 @@
                     </span>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 ps-0 mb-3">
                                 <label for="form-label">Name</label>
                                 <input type="text" class="form-control shadow-none">
                             </div>
-                            <div class="col-md-6">
-                                <label for="form-label">Email Address</label>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label for="form-label">Email</label>
                                 <input type="email" class="form-control shadow-none">
                             </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label for="form-label">Phone Number</label>
+                                <input type="number" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label for="form-label">Picture</label>
+                                <input type="file" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-12 p-0 mb-3">
+                                <label for="form-label">Address</label>
+                                <textarea class="form-control shadow-none" rows="1"></textarea>
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label for="form-label">Pin Code</label>
+                                <input type="number" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label for="form-label">Date of birth</label>
+                                <input type="date" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label for="form-label">Password</label>
+                                <input type="password" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label for="form-label">Confirm Password</label>
+                                <input type="password" class="form-control shadow-none">
+                            </div>
+                           
                         </div>
-                    </div>    
-                    <!-- <div class="mb-3">
-                            <label for="form-label">Email address</label>
-                            <input type="email" class="form-control shadow-none">
-                        </div>
-                        <div class="mb-4">
-                            <label for="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none">
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="submit" class="btn btn-dark shadow-none" >
+                        <div class="text-center my-1">
+                            <button type="submit" class="btn btn-dark shadow-none">
                                 REGISTER
                             </button>
-                            <a href="javascript: void(0)" class="text-secondary text-decoration-none" >Forgot Password ?</a>
-                        </div> -->
-                    </div>
+                        </div>
+                    </div>    
+
                 </form>   
             </div>
         </div>
     </div>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
