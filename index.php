@@ -34,7 +34,7 @@
             padding: 0;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
-            color: #fff;
+            color: black;
         }
         .swiper {
             width: 100%;
@@ -48,9 +48,28 @@
             display: block;
             width: 100%;
         }
+
+        .custom-bg {
+            background-color: #2ec1ac;
+        }
+        .custom-bg:hover {
+            background-color: #279eBc;
+        }
+        .availability-form {
+            margin-top: -50px;
+            z-index: 2;
+            position: relative;
+        }
+        @media screen and (max-width: 575px) {
+            .availability-form{
+                margin-top: 25px;
+                padding: 0 35px;
+            }
+        }
     </style>
 </head>
 <body class="bg-light" >
+    <!-- Navbar Starts -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">Xander Hotel</a>
@@ -82,8 +101,9 @@
             </div>
         </div>
     </nav>
+    <!-- Navbar Ends -->
 
-    <!-- Login Modal -->
+    <!-- Login Modal Starts -->
     <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -112,8 +132,9 @@
             </div>
         </div>
     </div>
+    <!-- Login Modal Ends -->
 
-    <!-- Registration Modal -->
+    <!-- Registration Modal Starts -->
     <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -131,11 +152,11 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6 ps-0 mb-3">
-                                    <label for="name">Name</label>
+                                    <label class="form-label" for="name">Name</label>
                                     <input type="text" class="form-control shadow-none" id="name" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
-                                    <label for="reg-email">Email</label>
+                                    <label class="form-label" for="reg-email">Email</label>
                                     <input type="email" class="form-control shadow-none" id="reg-email" required>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
@@ -143,19 +164,19 @@
                                     <input type="number" class="form-control shadow-none" id="phone" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
-                                    <label for="picture">Picture</label>
+                                    <label class="form-label" for="picture">Picture</label>
                                     <input type="file" class="form-control shadow-none" id="picture">
                                 </div>
                                 <div class="col-md-12 p-0 mb-3">
-                                    <label for="address">Address</label>
+                                    <label class="form-label" for="address">Address</label>
                                     <textarea class="form-control shadow-none" id="address" rows="1" required></textarea>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
-                                    <label for="pin-code">Pin Code</label>
+                                    <label class="form-label" for="pin-code">Pin Code</label>
                                     <input type="number" class="form-control shadow-none" id="pin-code" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
-                                    <label for="dob">Date of Birth</label>
+                                    <label class="form-label" for="dob">Date of Birth</label>
                                     <input type="date" class="form-control shadow-none" id="dob" required>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
@@ -176,8 +197,9 @@
             </div>
         </div>
     </div>
+    <!-- Registration Modal Ends -->
 
-    <!-- Swiper -->
+    <!-- Carousel or Swiper Starts -->
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
@@ -199,14 +221,61 @@
                 <div class="swiper-slide">
                     <img src="images/carousel/IMG_6.png" class="w-100 d-block" />
                 </div>
-            </div>
-            
+            </div>  
+        </div>
+    </div>
+    <!-- Carousel or Swiper Ends -->
+
+    <!-- Check availability form starts -->
+    <div class="container availability-form">
+        <div class="row">
+            <div class="col-lg-12 bg-white shadow p-4 rounded">
+                <h5 class="mb-4" >Check Booking Availability</h5>
+                <form>
+                    <div class="row align-items-end">
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label" style="font-weight: 500;" >Check-in</label>
+                            <input type="date" class="form-control shadow-none" required>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label" style="font-weight: 500;" >Check-out</label>
+                            <input type="date" class="form-control shadow-none" required>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label" style="font-weight: 500;" >Adult</label>
+                            <select class="form-select shadow-none" required>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>    
+                        </div>
+                        <div class="col-lg-2 mb-3">
+                            <label class="form-label" style="font-weight: 500;" >Children</label>
+                            <select class="form-select shadow-none" required>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>    
+                        </div>
+                        <div class="col-lg-1 mb-lg-3 mt-2">
+                            <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+                        </div>       
+                    </div>
+                    
+                </form>
+            </div> 
         </div>
     </div>
 
+
+<br><br><br>
+<br><br><br>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    
+    <!-- Swiper or Carousel Script -->
     <script>
         var swiper = new Swiper(".swiper-container", {
             spaceBetween: 30,
