@@ -9,6 +9,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -19,7 +20,7 @@ html, body {
     padding: 0;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: black;
+    
 }
 .swiper {
     width: 100%;
@@ -53,3 +54,22 @@ html, body {
         padding: 0 35px;
     }
 }
+
+.swiper-testimonials {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide-testimonials {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .swiper-slide-testimonials img {
+      display: block;
+      width: 30%;
+    }
+
