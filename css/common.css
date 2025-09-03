@@ -66,10 +66,11 @@ html, body {
       background-size: cover;
       width: 300px;
       height: 300px;
+      
     }
 
     .swiper-slide-testimonials img {
       display: block;
-      width: 30%;
+      width: 100%;
     }
 

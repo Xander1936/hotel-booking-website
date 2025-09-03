@@ -366,17 +366,17 @@
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font text-dark">TESTIMONIALS</h2>
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-testimonials">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper align-items-center">
                 <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
@@ -384,32 +384,14 @@
                         </div>
                     </div>
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>             
-                </div>
-
-                <div class="swiper-slide d-flex">   
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
@@ -417,32 +399,34 @@
                         </div>
                     </div>
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
-                    </div>   
+                    </div>
+                    
+
                 </div>
 
-                <div class="swiper-slide d-flex">   
+                <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
@@ -450,28 +434,90 @@
                         </div>
                     </div>
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="d-flex">
-                            <img src="images/facilities/star.png" class="w-30" alt="Star Image">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
-                        <p class="col-lg-12 col-md-4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure tempora nobis! Fugiat corrupti pariatur voluptatibus voluptatem placeat excepturi provident consequuntur, dolorem consequatur incidunt quidem nam ab accusantium! Laborum, nobis?
-                        </p class="">
-                        <div class="rating">
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
-                    </div>             
+                    </div>
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+                    
+            
                 </div>
 
+                <div class="swiper-slide d-flex align-items-center">   
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center p-4">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+                    
+            
+                </div>
                 
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_4.png" class="w-100 d-block" alt="Carousel Image 4">
-                </div>
                 
-
             </div>  
         </div>
     </div>
