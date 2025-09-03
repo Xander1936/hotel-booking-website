@@ -366,10 +366,10 @@
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font text-dark">TESTIMONIALS</h2>
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-testimonials">
-            <div class="swiper-wrapper align-items-center">
+            <div class="swiper-wrapper align-items-center mb-5">
                 <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
+                        <div class="profile d-flex align-items-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -383,43 +383,11 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    
-
                 </div>
 
                 <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
+                        <div class="profile d-flex align-items-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -433,43 +401,12 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    
             
                 </div>
 
                 <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
+                        <div class="profile d-flex align-items-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -483,39 +420,47 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center p-4">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-                    
             
                 </div>
+
+                <div class="swiper-slide d-flex align-items-center">   
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center mb-3">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+            
+                </div>
+                
+                <div class="swiper-slide d-flex align-items-center">   
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center mb-3">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+            
+                </div>
+                
                 
                 
             </div>  
@@ -547,16 +492,32 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        slidesPerView: 3,
+        loop: true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
         },
         pagination: {
             el: ".swiper-pagination",
         },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        }
         });
     </script>
 </body>
