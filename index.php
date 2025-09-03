@@ -364,12 +364,13 @@
 
     <!-- Testimonials Section Starts -->
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font text-dark">TESTIMONIALS</h2>
-    <div class="container-fluid px-lg-4 mt-4">
+    
+    <div class="container-fluid mt-5 px-lg-4 mt-4">
         <div class="swiper swiper-testimonials">
             <div class="swiper-wrapper align-items-center mb-5">
-                <div class="swiper-slide d-flex align-items-center">   
+                <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center mb-3">
+                        <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -385,9 +386,28 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide d-flex align-items-center">   
+                <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center mb-3">
+                        <div class="profile d-flex align-items-center justify-content-center mb-3">
+                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
+                            <h6 class="m-0 ms-2">Random user1</h6>
+                        </div>
+                        <p class="text-center blockquote">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="text-center blockquote rating">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="swiper-slide d-flex align-items-center justify-content-center justify-content-center">   
+                    <div class="swiper-slide-testimonials d-block">
+                        <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -406,26 +426,7 @@
 
                 <div class="swiper-slide d-flex align-items-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center mb-3">
-                            <img src="images/facilities/star.png" class="w-25" alt="Star Image">
-                            <h6 class="m-0 ms-2">Random user1</h6>
-                        </div>
-                        <p class="text-center blockquote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="text-center blockquote rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                    </div>
-            
-                </div>
-
-                <div class="swiper-slide d-flex align-items-center">   
-                    <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center mb-3">
+                        <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -442,9 +443,9 @@
             
                 </div>
                 
-                <div class="swiper-slide d-flex align-items-center">   
+                <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
-                        <div class="profile d-flex align-items-center mb-3">
+                        <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
                             <h6 class="m-0 ms-2">Random user1</h6>
                         </div>
@@ -467,6 +468,12 @@
         </div>
     </div>
     <!-- Testimonials Section Ends -->
+    
+    
+    <!-- REACH US Section Starts -->
+    <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>
+
+    <!-- REACH US Section Ends -->
 
 <br><br><br>
 <br><br><br>
