@@ -367,7 +367,7 @@
     
     <div class="container-fluid mt-5 px-lg-4 mt-4">
         <div class="swiper swiper-testimonials">
-            <div class="swiper-wrapper align-items-center mb-5">
+            <div class="swiper-wrapper align-items-center mb-2">
                 <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
                         <div class="profile d-flex align-items-center justify-content-center mb-3">
@@ -405,7 +405,7 @@
             
                 </div>
 
-                <div class="swiper-slide d-flex align-items-center justify-content-center justify-content-center">   
+                <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
                         <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
@@ -421,10 +421,9 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-            
                 </div>
 
-                <div class="swiper-slide d-flex align-items-center">   
+                <div class="swiper-slide d-flex align-items-center justify-content-center">   
                     <div class="swiper-slide-testimonials d-block">
                         <div class="profile d-flex align-items-center justify-content-center mb-3">
                             <img src="images/facilities/star.png" class="w-25" alt="Star Image">
@@ -440,7 +439,6 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-            
                 </div>
                 
                 <div class="swiper-slide d-flex align-items-center justify-content-center">   
@@ -459,10 +457,7 @@
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
                     </div>
-            
                 </div>
-                
-                
                 
             </div>  
         </div>
@@ -473,6 +468,50 @@
     <!-- REACH US Section Starts -->
     <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-8 col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230661.04484231502!2d81.6367733161178!3d25.402171897790073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1756935742332!5m2!1sfr!2scm" loading="lazy"></iframe>
+            </div>
+            <div class="col-4 d-block">
+                <div class="col-lg-12 col-md-12">
+                    <div class="bg-white p-4 rounded mb-4">
+                        <h5>Call Us</h5>
+                        <a href="tel: +237691644122" class="d-inline-block mb-2 text-decoration-none text-dark">
+                            <i class="bi bi-telephone-fill"></i> +237691644122
+                        </a>
+                        <br>
+                        <a href="tel: +237691644122" class="d-inline-block text-decoration-none text-dark">
+                            <i class="bi bi-whatsapp"></i> +237691644122
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="bg-white p-4 rounded mb-4">
+                        <h5>Follow Us</h5>
+                        <a href="#" class="d-inline-block mb-3 ">
+                            <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-linkedin"></i>  <a class="text-decoration-none text-dark fw-bolder" href="http://linkedin.com/in/alexandre-massoda" target="_blank">LinkedIn</a>
+                            </span>
+                        </a>
+                        <br>
+                        <a href="#" class="d-inline-block mb-3 ">
+                            <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-facebook"></i>  Facebook
+                            </span>
+                        </a>
+                        <br>
+                        <a href="#" class="d-inline-block mb-3 ">
+                            <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-instagram"></i>  Instagram
+                            </span>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- REACH US Section Ends -->
 
 <br><br><br>
