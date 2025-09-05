@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active me-2" aria-current="page" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#">Rooms</a></li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#">Facilities</a></li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="#rooms">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="#facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 </ul>
                 <div class="d-flex" role="search">
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
@@ -204,7 +204,7 @@
 
     <!-- Our Rooms Section Starts -->
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font text-dark">OUR ROOMS</h2>
-    <div class="container">
+    <div class="container" id="rooms">
         <div class="row">
             <!-- Room Card Example -->
             <div class="col-lg-4 col-md-6 my-3">
@@ -329,7 +329,7 @@
         OUR FACILITIES
     </h2>
 
-    <div class="container">
+    <div class="container" id="facilities">
         <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
                 <img src="images/facilities/wifi.svg" width="80px">
@@ -365,7 +365,7 @@
     <!-- Testimonials Section Starts -->
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font text-dark">TESTIMONIALS</h2>
     
-    <div class="container-fluid mt-5 px-lg-4 mt-4">
+    <div class="container-fluid mt-2 px-lg-4">
         <div class="swiper swiper-testimonials">
             <div class="swiper-wrapper align-items-center mb-2">
                 <div class="swiper-slide d-flex align-items-center justify-content-center">   
@@ -458,8 +458,10 @@
                         </div>
                     </div>
                 </div>
-                
-            </div>  
+        </div>
+
+        <div class="col-lg-12 text-center mt-2">
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More >>></a>
         </div>
     </div>
     <!-- Testimonials Section Ends -->
@@ -468,7 +470,7 @@
     <!-- REACH US Section Starts -->
     <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>
 
-    <div class="container">
+    <div class="container" id="contact">
         <div class="row">
             <div class="col-8 col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
                 <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230661.04484231502!2d81.6367733161178!3d25.402171897790073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1756935742332!5m2!1sfr!2scm" loading="lazy"></iframe>
@@ -516,6 +518,41 @@
 
 <br><br><br>
 <br><br><br>
+
+<!-- Footer Starts Here -->
+    <div class="container-fluid bg-white mt-5">
+        <div class="row">
+            <div class="col-lg-4 p-4">
+                <h3 class="h-font fw-bold fs-3 text-dark mb-2">Xander Hotel</h3>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit vero accusamus recusandae neque a distinctio, incidunt repudiandae officiis numquam, necessitatibus quasi? Ab fuga molestias enim nam inventore. Labore, est libero?
+                </p>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Links</h5>
+                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a> <br>
+                <a href="#rooms" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a> <br>
+                <a href="#facilities" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a> <br>
+                <a href="#contact" class="d-inline-block mb-2 text-dark text-decoration-none">Contact Us</a> <br>
+                <a href="#about" class="d-inline-block mb-2 text-dark text-decoration-none">About</a> <br>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Follow Us</h5>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-linkedin me-1"></i> LinkedIn
+                </a> <br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-facebook me-1"></i> Facebook
+                </a> <br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none">
+                    <i class="bi bi-instagram me-1"></i> Instagram
+                </a> <br>
+            </div>
+        </div>
+    </div>
+
+    <h6 class="text-center bg-dark py-4 text-white p-3 m-0">© 2025 Xander Hotel, designed and developed by Alexandre Massoda. All Rights Reserved.</h6>
+<!-- Footer Ends Here -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
