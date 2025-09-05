@@ -1,0 +1,34 @@
+<!-- Footer Starts Here -->
+    <div class="container-fluid bg-white mt-5">
+        <div class="row">
+            <div class="col-lg-4 p-4">
+                <h3 class="h-font fw-bold fs-3 text-dark mb-2">Xander Hotel</h3>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit vero accusamus recusandae neque a distinctio, incidunt repudiandae officiis numquam, necessitatibus quasi? Ab fuga molestias enim nam inventore. Labore, est libero?
+                </p>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Links</h5>
+                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a> <br>
+                <a href="#rooms" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a> <br>
+                <a href="#facilities" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a> <br>
+                <a href="#contact" class="d-inline-block mb-2 text-dark text-decoration-none">Contact Us</a> <br>
+                <a href="#about" class="d-inline-block mb-2 text-dark text-decoration-none">About</a> <br>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Follow Us</h5>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-linkedin me-1"></i> LinkedIn
+                </a> <br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-facebook me-1"></i> Facebook
+                </a> <br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none">
+                    <i class="bi bi-instagram me-1"></i> Instagram
+                </a> <br>
+            </div>
+        </div>
+    </div>
+
+    <h6 class="text-center bg-dark py-4 text-white p-3 m-0">© 2025 Xander Hotel, designed and developed by Alexandre Massoda. All Rights Reserved.</h6>
+<!-- Footer Ends Here -->
