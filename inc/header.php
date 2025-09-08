@@ -11,7 +11,7 @@
                     <li class="nav-item"><a class="nav-link me-2" href="#rooms">Rooms</a></li>
                     <li class="nav-item"><a class="nav-link me-2" href="#facilities">Facilities</a></li>
                     <li class="nav-item"><a class="nav-link me-2" href="#contact">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                 </ul>
                 <div class="d-flex" role="search">
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
