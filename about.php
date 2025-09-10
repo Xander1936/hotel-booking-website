@@ -134,7 +134,6 @@
 
     <?php require("inc/footer.php"); ?>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
 
     <!-- Initialize Swiper -->
     <script>
@@ -155,7 +154,7 @@
                     slidesPerView: 2,
                 },
                 1024: {
-                    slidesPerView: 35                },
+                    slidesPerView: 3,                },
             }
         });
     </script>

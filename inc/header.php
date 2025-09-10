@@ -9,8 +9,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active me-2" aria-current="page" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link me-2" href="#rooms">Rooms</a></li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#facilities">Facilities</a></li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="facilities.php">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="contact.php">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                 </ul>
                 <div class="d-flex" role="search">
