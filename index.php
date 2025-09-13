@@ -388,9 +388,9 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Follow Us</h5>
-                        <a href="#" class="d-inline-block mb-3 ">
+                        <a href="http://linkedin.com/in/alexandre-massoda" class="text-decoration-none text-dark d-inline-block mb-3" target="_blank">
                             <span class="badge bg-light text-dark fs-6 p-2">
-                                <i class="bi bi-linkedin"></i>  <a class="text-decoration-none text-dark fw-bolder" href="http://linkedin.com/in/alexandre-massoda" target="_blank">LinkedIn</a>
+                                <i class="bi bi-linkedin"></i> LinkedIn
                             </span>
                         </a>
                         <br>
