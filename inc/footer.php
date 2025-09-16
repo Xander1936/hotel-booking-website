@@ -31,4 +31,6 @@
     </div>
 
     <h6 class="text-center bg-dark py-4 text-white p-3 m-0">© 2025 Xander Hotel, designed and developed by Alexandre Massoda. All Rights Reserved.</h6>
-<!-- Footer Ends Here -->
+<!-- Footer Ends Here --> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
