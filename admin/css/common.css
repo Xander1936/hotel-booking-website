@@ -65,6 +65,12 @@ html, body {
     height: 1.7px;
 }
 
+.custom-alert{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
+
 .availability-form {
     margin-top: -50px;
     z-index: 2;
@@ -102,4 +108,3 @@ div.login-form{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
