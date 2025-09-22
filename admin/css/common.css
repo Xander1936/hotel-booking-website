@@ -108,3 +108,18 @@ div.login-form{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#dashboard-menu{
+    position: fixed;
+    height: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    #dashboard-menu{
+        height: auto;
+        width: 100%;
+    }
+    #main-content{
+        margin-top: 60px;
+    }
+}

@@ -20,9 +20,9 @@
     <?php require('../admin/inc/links.php'); ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light mt-3 sm-mt-5">
-    <div class="container login-form text-center rounded bg-white shadow overflow-hidden" style="width: 320px; height: 300px; margin: auto; padding: 0px;">
-        <div class="row justify-content-center align-items-center text-center pt-auto bg-dark  overflow-hidden" style="width: 330px; height: 70px;">
+<body class="bg-light mt-5 sm-mt-5">
+    <div class="container-fluid login-form text-center rounded bg-white shadow overflow-hidden" style="width: 320px; height: 300px; margin: auto; padding: 0px;">
+        <div class="row justify-content-center align-items-center text-center pt-auto bg-dark  overflow-hidden" style="width: auto; height: 70px;">
             <h4 class="text-center py-2 text-white">Admin Login Panel</h4>
         </div>
         <form method="POST" class="text-center">
@@ -64,7 +64,7 @@
                     exit();
                 }
                 else{
-                    alert('error','Login failed - Invalid Credentials !');
+                    alert('error',"Login Failed - Invalid Credentials !");
                 }
             }
 
