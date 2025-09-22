@@ -17,7 +17,7 @@
     <body class="bg-light">
 
         <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
-            <h3 class="mb-0 h-font">Xander Hotel</h3>
+            <h3 class="navbar-brand me-5 fw-bold fs-3 h-font mb-0">Xander Hotel</h3>
             <a href="../admin/logout.php" class="btn btn-danger btn-sm">Logout</a>
         </div>
 

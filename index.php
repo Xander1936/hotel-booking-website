@@ -129,7 +129,7 @@
                 </div>
             </div>
             <!-- Repeat for additional rooms -->
-             <div class="col-lg-4 col-md-6 my-3">
+            <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top" alt="Room Image">
                     <div class="card-body">
