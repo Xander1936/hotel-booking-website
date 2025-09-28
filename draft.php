@@ -1,84 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Panel - Dashboard</title>
-        <?php require("../admin/inc/links.php"); ?>
-    </head>
-    <body class="bg-light">
-        <?php require('../admin/inc/header.php'); ?>
-        <?php require('../admin/inc/main_content.php'); ?>
+<div class="container-fluid" id="main-content">
+    <div class="row">
+        <div class="col-lg-10 ms-3 p-3 overflow-hidden">
+            <h3 class="mb-4">SETTINGS</h3>
 
-        
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    </body>
-</html>
-
-
-
-<?php
-require('../admin/inc/essentials.php');
-require("../admin/inc/scripts.php");
-adminLogin();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Dashboard</title>
-    <?php require("../admin/inc/links.php"); ?>
-</head>
-<body class="bg-light">
-    <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
-        <h3 class="mb-0 h-font">Xander Hotel</h3>
-        <a href="../admin/logout.php" class="btn btn-danger btn-sm">Logout</a>
-    </div>
-
-    <div class="d-flex">
-        <div class="col-lg-2 bg-dark border-top border-3 border-secondary" id="dashboard-menu">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid flex-lg-column align-items-stretch" style="height:100%; ">
-                    <h4 class="mt-2 text-light">ADMIN PANEL</h4>
-                    <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#adminDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="adminDropdown">
-                        <ul class="nav nav-pills flex-column">
-                            <li class="nav-item">
-                                <a href="../admin/dashboard.php" class="nav-link text-white">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Rooms</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Users</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Settings</a>
-                            </li>
-                        </ul>
+            <!-- General Settings Section Starts -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="card-title m-0">General Settings</h5>
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#general-s">
+                            <i class="bi bi-pencil-square"> Edit</i> 
+                        </button>
                     </div>
-                </div>
-            </nav>
-        </div>
-    
-        <div class="container-fluid" id="main-content">
-            <div class="row">
-                <div class="col-lg-10 ms-3 p-3 overflow-hidden">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores ex recusandae earum fugiat. Ipsum blanditiis aliquam quis consectetur consequuntur, est quo dolorem nulla nihil adipisci laudantium nesciunt aliquid provident. Sit, velit voluptate, quasi repudiandae sequi recusandae ab nesciunt, nisi ipsam animi perferendis tempora magni alias dolorem laboriosam consectetur tenetur atque quae impedit? Impedit, atque? Asperiores, cumque. Voluptas laborum aspernatur quam reprehenderit ipsam distinctio, omnis quo nostrum, odit sint beatae veniam. Provident sed, quos quod modi doloremque veritatis excepturi voluptatem tenetur? Suscipit cupiditate quis iusto delectus quas pariatur deleniti ad corrupti magnam sapiente aperiam iste quo, sequi facere odit, explicabo dolorem. Totam atque voluptate id laborum veniam tenetur ab suscipit. Iusto odio explicabo necessitatibus fuga eligendi voluptas quos architecto doloribus aspernatur dolor beatae, eum rem fugiat? Iste itaque optio reiciendis quae sit perferendis dignissimos libero, aspernatur tenetur fugiat dolores necessitatibus numquam assumenda saepe amet possimus, quod, repellendus eos beatae fugit obcaecati officiis aut voluptatum. Dolorem officiis incidunt ipsam magni, ex est necessitatibus deleniti ipsa tempora! Repudiandae dolores odio, incidunt ab culpa iusto, facilis hic magnam quae nisi veniam eveniet illo iure dolorem explicabo libero officia velit ducimus repellendus praesentium. Culpa impedit consequuntur adipisci reprehenderit sed, officiis magnam rem harum commodi illum fuga nisi minus eaque aperiam corrupti aspernatur ad minima dolores quibusdam soluta natus nostrum iusto. Nulla adipisci quis pariatur provident magnam, cum debitis exercitationem? Doloribus voluptatum ea modi ipsa obcaecati nobis nulla rem ab iure amet quis ducimus veritatis impedit earum, tenetur corporis aperiam vitae, itaque at nesciunt nihil magni voluptate! Illum voluptatem impedit eum magnam sed, quas aspernatur, asperiores similique, distinctio nesciunt debitis modi voluptate aut explicabo! Optio, est quisquam cum voluptatum ea maiores commodi consequuntur nostrum consequatur modi tempora esse nesciunt voluptas cupiditate hic facere voluptate beatae debitis pariatur dolorem. Saepe cupiditate possimus pariatur aliquam sint quod! Unde beatae assumenda suscipit iste veniam eos explicabo ex sequi expedita voluptas officiis nihil fugiat quod dolor aliquam corrupti non, nulla optio est consequuntur similique recusandae. Delectus totam ipsa ratione libero eveniet quibusdam nobis dolor eius quis, eum facilis officia ipsam iste exercitationem quia fugit dicta soluta? Error explicabo id nostrum aspernatur dignissimos velit delectus quasi ipsam laboriosam, deserunt itaque minima facilis nihil a maxime iusto qui impedit nisi sunt tempore alias. Harum esse, explicabo molestias nostrum quia recusandae sunt maiores. Sequi a officia quas eveniet nobis assumenda mollitia alias inventore? Ipsam cum reiciendis asperiores fuga, laudantium maiores debitis ducimus rerum suscipit, tenetur repellendus voluptatibus amet nostrum odio. Dolor eos maiores alias deserunt qui enim necessitatibus, excepturi esse quisquam facere blanditiis provident asperiores rerum nemo? Recusandae odit repellendus corporis alias voluptas. Temporibus laborum labore vitae illum perferendis. Fugit laboriosam corporis, deserunt vitae, et sapiente veritatis nulla doloremque obcaecati, animi illum. Dolor accusamus, ipsum vero unde inventore impedit praesentium fuga quisquam sint, ad, dolores temporibus perspiciatis reiciendis reprehenderit fugiat voluptate eos! Id, tempora, recusandae quae sapiente repellendus dolorem incidunt adipisci deleniti quo quas unde. Commodi sunt maxime dolorum libero in earum, placeat ab facere sint eligendi assumenda voluptatibus nobis dignissimos quam aperiam non vero illo reprehenderit officia fugiat error? Saepe, cum quas maxime quisquam voluptatem excepturi, et voluptates nobis pariatur ad corporis eligendi fugit nostrum tempore, atque minus facilis beatae adipisci? Natus et distinctio accusantium possimus est quas quod delectus adipisci non voluptates atque pariatur fugiat animi id minus minima, vitae voluptatem architecto illo nam facere quaerat incidunt iusto quisquam! Modi deserunt deleniti facere distinctio ipsa quasi labore harum quidem sunt beatae. Temporibus quo eveniet itaque voluptatem alias esse id beatae nobis vitae rem quasi obcaecati dolorem est eaque quae, reprehenderit molestias ea nisi adipisci libero hic saepe distinctio. Consequuntur molestiae similique doloremque, ducimus quibusdam nesciunt voluptatem minima aut corporis saepe eveniet, placeat sit impedit tenetur dolorum repellendus ad? Doloremque quis, distinctio, quos quaerat eum eaque sint esse officiis perferendis ratione magni. Ex facilis unde repellendus id perferendis, recusandae culpa commodi assumenda dolorem repudiandae quasi nobis distinctio corrupti cum? Voluptas eos tempore ducimus dignissimos. Suscipit officia eius dolorum facere ipsam, alias consequatur. Adipisci ullam facere rerum vero earum ipsum a quo molestias voluptas ratione quibusdam eius voluptatem nobis porro in, atque fugiat fuga accusantium accusamus cumque. Tempora, blanditiis iure culpa qui eaque esse eos quam sit dolorem debitis. Quidem nesciunt ad recusandae incidunt quaerat totam amet debitis autem, temporibus non id veritatis nulla voluptatum alias eius placeat voluptatem aspernatur! Nobis minus est excepturi quia aperiam temporibus, ea ipsa vero autem in obcaecati. Officia culpa saepe aspernatur consequatur deleniti illum quas excepturi porro fugit quis repellat eos earum delectus, placeat ducimus esse quae officiis? Quas debitis iusto earum tempore excepturi, quaerat, magnam cumque minus voluptatum, nesciunt dignissimos. Odit, sit enim? Est unde iure, assumenda et accusantium porro adipisci fugit provident consequuntur necessitatibus soluta quas, cum dolore voluptatum iste eos vitae odit modi illum molestiae, dolorum voluptatibus voluptates laborum expedita. Ducimus porro ex placeat debitis blanditiis veniam expedita cum eos! A ratione vel sint eius repellendus itaque non corrupti ab! Maxime voluptas magni corporis tempore, accusamus nesciunt sit ex quia consectetur eos ipsam ipsum illo quibusdam quo dicta ad architecto. Magni architecto deleniti expedita consequuntur id animi, commodi obcaecati aliquid rerum vero, deserunt consectetur officia numquam itaque hic. Numquam dolores esse, aperiam reprehenderit voluptatibus nesciunt culpa magnam assumenda pariatur quam dicta ad delectus quasi vel tempora dolore at consectetur ratione? Error, quaerat voluptates praesentium aperiam laborum, itaque officiis facilis deleniti voluptas provident ullam assumenda dolores fugiat odit quis nihil. Excepturi facere doloribus sed laborum rerum culpa. Dolore illo modi assumenda aut ut quisquam eius omnis similique, officia hic iste ipsa odit optio deserunt ratione magnam dicta nobis qui possimus aliquam doloremque laudantium blanditiis? Recusandae doloribus aspernatur cupiditate consequatur nobis architecto. Expedita ut dolorem quam eum, culpa itaque eos maiores laborum repellendus facilis debitis sapiente inventore veniam corporis. Quod aperiam quis amet eaque, sint aspernatur officiis voluptas autem odit, vitae itaque. Explicabo quos provident consequuntur asperiores necessitatibus quisquam consequatur exercitationem incidunt sapiente laborum hic deserunt, rem ea qui, doloremque accusamus, dolorum labore. Eum ipsam neque fugiat deserunt. Dolor est quisquam debitis magni ad cumque doloremque, temporibus, eveniet dicta quos non velit officia, voluptas impedit dolorum optio quidem explicabo consectetur aspernatur voluptatem ut! Reprehenderit doloribus voluptatem illum repellat, fuga atque consequuntur repellendus perspiciatis minus commodi eos fugiat molestias corrupti dolor harum labore hic quo? Harum reiciendis, fugit praesentium voluptas deleniti nisi sequi fugiat saepe eligendi adipisci libero pariatur suscipit voluptatibus expedita tenetur, doloribus sapiente esse beatae qui consequatur quaerat ut vero. Sequi iure eius, reiciendis possimus recusandae veniam quae blanditiis aspernatur magni modi facilis, ratione voluptatem rem repellat unde deserunt amet, quam illum beatae. Quia doloribus consequatur temporibus culpa minima enim et laboriosam, perspiciatis id accusantium praesentium modi maxime ex quae animi blanditiis consequuntur. Aliquam minima id nostrum ipsum eaque totam. Harum iure amet sequi, odio, itaque cumque quo perspiciatis consectetur expedita ex dicta. Illum, perspiciatis aspernatur? Culpa facere, eveniet perferendis qui neque possimus deleniti corrupti asperiores magnam, vero, aut totam. At minus dolor iusto sint dignissimos alias molestias magni, minima ex iste explicabo eum vero, modi quae architecto facere quaerat ipsum nesciunt quis vitae possimus sed dolorem assumenda tenetur! Magnam excepturi ut a eligendi laudantium molestias assumenda illum alias natus totam. Amet necessitatibus accusamus, sed quaerat ullam earum ut molestias nostrum sit nemo architecto perspiciatis quam ad, explicabo, adipisci blanditiis rerum consequuntur nulla aliquid quidem qui obcaecati! Suscipit dolore accusamus nostrum numquam dicta quod rerum necessitatibus, ipsum, veritatis quia facere assumenda quos explicabo impedit est obcaecati unde deleniti officia perspiciatis rem, placeat laudantium. Dicta repellat, accusantium similique maxime voluptas blanditiis unde. Eos fugit odit facilis pariatur nisi dolores, magnam laboriosam consectetur accusamus debitis neque beatae possimus. Nisi veritatis vel doloribus voluptas quo possimus. Dicta, soluta a? Obcaecati corrupti enim eius suscipit architecto voluptates expedita, neque et adipisci magni voluptatum ullam sed, ex optio tempora assumenda deleniti cum possimus facilis aliquid aperiam ea harum! Neque illum quis itaque dignissimos eos suscipit omnis beatae sed sit vel placeat sunt corrupti autem, deleniti ipsa nostrum magni dolor animi officia cumque laudantium optio ad labore voluptates. Nobis neque voluptates ab nam doloribus similique cupiditate quia vel nihil, fugiat consectetur velit numquam hic necessitatibus laborum molestias deserunt dicta! Impedit quis laboriosam magni aut obcaecati, cupiditate nesciunt sapiente quas facere qui quibusdam provident veniam nisi nulla unde eos nihil animi. Distinctio dolorum suscipit beatae, minima laudantium nemo reiciendis ea qui voluptatum, repudiandae officia fuga repellendus eaque quam quos ex cum error accusantium vitae eius odio quod perspiciatis veritatis est! Tenetur minus aliquid enim accusamus, nostrum ex ratione? Recusandae architecto, aspernatur sit eligendi culpa laudantium accusantium eos voluptates quia quae distinctio doloremque rerum neque! Amet numquam esse repellat debitis, dignissimos dolorem blanditiis velit ea cum iste illo laborum est quae, eum illum. Exercitationem qui porro praesentium dicta eos ex doloribus, vero maiores distinctio fuga quidem sint quae earum tenetur pariatur aspernatur voluptate necessitatibus aliquam dolores reiciendis. Quia nostrum magni quidem in, nobis at sint repudiandae obcaecati ad vel unde eum, reiciendis ipsa corporis similique, alias hic beatae? Modi eveniet excepturi nostrum. Quia voluptatem dicta dolores minus accusantium quis enim. Quo repellendus accusantium sapiente quis non voluptatem, odit enim itaque aperiam expedita rem quasi dolorum, laboriosam ullam iure cupiditate minima similique, velit consequatur. Dicta numquam nemo aliquam suscipit recusandae quis odit ullam quia temporibus aspernatur dignissimos ipsam ipsum error consectetur beatae animi, quasi, ratione maiores! Earum animi, blanditiis ea at id doloribus sequi ratione hic? Placeat tenetur nobis maxime, laudantium repudiandae maiores non! Quod laboriosam velit cum vitae omnis ullam nostrum tempore illo a, cupiditate excepturi ad reprehenderit maxime illum blanditiis quae quasi dicta eos? Asperiores ea praesentium animi totam natus quas nulla molestiae distinctio velit ullam? Molestiae quaerat provident facilis consectetur quam corporis nisi recusandae voluptates deserunt itaque quae accusantium pariatur hic praesentium eos accusamus quod, ipsa magni assumenda cupiditate dignissimos architecto. Magnam nam earum pariatur esse, aliquam et, assumenda, repellat optio facilis quasi atque molestias unde incidunt cum saepe! Veniam exercitationem doloribus quis ab, esse neque excepturi saepe iure adipisci molestiae ipsa dolorum nobis quod deserunt alias tempore, beatae sint facere laudantium. Minima suscipit, nulla id ratione ea quidem corporis excepturi voluptate laudantium ad beatae nesciunt reiciendis expedita dolorem non assumenda. Eligendi quia id quibusdam atque non fugiat nemo voluptas ipsam provident ducimus est vel architecto, molestiae porro repellat a vitae voluptate omnis debitis sapiente ipsum veritatis nostrum. Provident ipsum, numquam voluptate consequuntur debitis voluptas odio harum mollitia excepturi nam, aspernatur veritatis asperiores, fugiat voluptates dolor sint saepe libero nostrum sapiente molestiae quam dolorem ratione atque? Officiis corporis repellat dicta magni deserunt ea excepturi odit ducimus. Dignissimos odit similique quasi aspernatur consequuntur molestiae quia nihil vitae repudiandae, sed alias numquam officia inventore repellendus nam quam perferendis. Pariatur blanditiis amet placeat sed, debitis veniam at incidunt praesentium provident autem non nostrum ut ad quas a harum earum sit totam illo aspernatur maxime, illum laboriosam? Minus nisi obcaecati aliquid rem consequuntur dolor sint maxime facilis, eum sunt beatae inventore quisquam eligendi saepe ab incidunt nostrum quibusdam laudantium. Incidunt vero possimus distinctio molestias magni error sequi, asperiores est nihil hic ipsum totam at, rem veniam! Ipsa qui doloremque recusandae quo omnis voluptatibus perspiciatis nemo inventore quos hic quaerat quod, consectetur temporibus reprehenderit officia magnam aut explicabo ea sunt. Sed atque suscipit consequatur, adipisci in quia nesciunt optio a nisi eius molestias vero impedit dolores ratione dolorum nemo ullam! Autem impedit eos minima quisquam fugit rem assumenda harum est cumque dolorum ab quis quasi aspernatur, illo velit quam saepe officiis. Molestias perspiciatis minima, maiores expedita magni voluptatibus, dolor et tempore assumenda consectetur rem placeat, ut harum illum reprehenderit sint aspernatur fugit aliquid vero recusandae corrupti odit. Soluta quos, accusamus sit cupiditate quidem distinctio explicabo veritatis quod, excepturi possimus asperiores tempore. Totam libero velit nulla modi sed eveniet aperiam ea rem voluptas, eius, accusamus dolor et quibusdam exercitationem cum iusto dolore ducimus facilis doloremque consequatur saepe ad placeat. Beatae nobis maiores ipsam ad laudantium, nisi ipsa laboriosam veniam ex commodi ducimus, unde consectetur repudiandae consequatur consequuntur molestias quaerat corporis sequi eos in quas tempore pariatur! Facere perspiciatis ullam velit itaque hic rerum aut dicta animi beatae.  
+                    <h6 class="card-subtitle mb-1 fw-bold">Site Title</h6>
+                    <p class="card-text" id="site_title"></p>
+                    <h6 class="card-subtitle mb-1 fw-bold">About Us</h6>
+                    <p class="card-text" id="site_about"></p>   
                 </div>
             </div>
-        </div>
+
+            <!-- General Settings Modal Section Starts -->
+            <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title">General Settings</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name">Site Title</label>
+                                    <input type="text" name="site_title" id="site_title_inp" class="form-control shadow-none" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="address">About Us</label>
+                                    <textarea name="site_about" id="site_about_inp" class="form-control shadow-none" rows="6" required></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="resetGeneralSettings()" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                <button type="button" onclick="upd_general(site_title_inp.value, site_about_inp.value)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- General Settings Modal Ends -->
+
+            <!-- Shutdown Section Starts -->
+            <div class="card border-0 shadow-sm mb-4 mt-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="card-title m-0">Shutdown Website</h5>
+                        <div class="form-check form-switch">
+                            <input onchange="upd_shutdown(this.checked ? 1 : 0)" class="form-check-input" type="checkbox" id="shutdown-toggle">
+                        </div>
+                    </div>
+                    <p class="card-text">
+                        No customers will be allowed to book hotel room when shutdown mode is turned on.
+                    </p>   
+                </div>
+            </div>
+            <!-- Shutdown Section Ends -->
+        </div>    
     </div>
+</div>
 
+<script>
+    let general_data;
 
-    
+    function get_general() {
+        let site_title = document.getElementById('site_title');
+        let site_about = document.getElementById('site_about');
+        let site_title_inp = document.getElementById('site_title_inp');
+        let site_about_inp = document.getElementById('site_about_inp');
+        let shutdown_toggle = document.getElementById('shutdown-toggle');
 
-</body>
-</html>
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/settings_crud.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            general_data = JSON.parse(this.responseText);
+            site_title.innerText = general_data.site_title;
+            site_about.innerText = general_data.site_about;
+            site_title_inp.value = general_data.site_title;
+            site_about_inp.value = general_data.site_about;
+
+            shutdown_toggle.checked = general_data.shutdown == 1; // Simplified logic
+        };
+
+        xhr.send('get_general');
+    }
+
+    function upd_general(site_title_val, site_about_val) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/settings_crud.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            var myModal = document.getElementById('general-s');
+            var modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+
+            if (this.responseText == 1) {
+                alert('success', 'Changes saved!');
+                get_general();
+            } else {
+                alert('error', 'No Changes made!');
+            }
+        };
+
+        xhr.send('site_title=' + encodeURIComponent(site_title_val) + '&site_about=' + encodeURIComponent(site_about_val) + '&upd_general');
+    }
+
+    function upd_shutdown(val) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/settings_crud.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            if (this.responseText == 0) {
+                alert('success', 'Shutdown mode off!');
+            } else {
+                alert('error', 'Site has been shutdown!');
+            }
+            get_general();
+        };
+
+        xhr.send('upd_shutdown=' + val);
+    }
+
+    function resetGeneralSettings() {
+        let site_title_inp = document.getElementById('site_title_inp');
+        let site_about_inp = document.getElementById('site_about_inp');
+        site_title_inp.value = general_data.site_title;
+        site_about_inp.value = general_data.site_about;
+    }
+
+    window.onload = function() {
+        get_general();
+    }
+</script>

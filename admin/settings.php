@@ -1,6 +1,6 @@
 <?php 
     require('../admin/inc/essentials.php'); 
-    require("../admin/inc/scripts.php"); 
+    require("../admin/inc/scripts.php");
     adminLogin(); 
 ?>
 
