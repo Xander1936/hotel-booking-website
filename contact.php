@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Xander Hotel - CONTACT</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
+    <link rel="stylesheet" href="/css/common.css">
     <?php require("inc/links.php"); ?>
     
 </head>
@@ -93,7 +93,9 @@
                             <label for="" class="form-label" style="font-weight: 500;">Message:</label>
                             <textarea class="form-control shadow-none" rows="5"></textarea>
                         </div>
-                        <button type="submit" class="btn text-white custom-bg shadow-none mt-3">SEND</button>
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#contactForm">SEND</button>
+                        </div>
                     </form>
                 </div>
             </div>

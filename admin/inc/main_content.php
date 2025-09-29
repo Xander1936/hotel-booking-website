@@ -23,7 +23,7 @@
             <!-- General Settings Modal Section Starts -->
             <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <form>
+                    <form id="general_s_form">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title">General Settings</h1>
@@ -31,17 +31,17 @@
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label" for="site_title_inp">Site Title</label>
+                                    <label class="form-label fw-bold" for="site_title_inp">Site Title</label>
                                     <input type="text" name="site_title" id="site_title_inp" class="form-control shadow-none" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="site_about_inp">About Us</label>
+                                    <label class="form-label fw-bold" for="site_about_inp">About Us</label>
                                     <textarea name="site_about" id="site_about_inp" class="form-control shadow-none" rows="6" required></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="button" onclick="upd_general(site_title.value, site_about.value)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit"  class="btn custom-bg text-white shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
@@ -67,19 +67,88 @@
             </div>
             <!-- Shutdown Section Ends -->
 
+            <!-- Contacts Details Section Starts -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="card-title m-0">Contacts Settings</h5>
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#contacts-s">
+                            <i class="bi bi-pencil-square"> Edit</i> 
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
+                            <div class="col-lg-6 p-2">
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">Address</h6>
+                                    <p class="card-text" id="address"></p>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">Google Map</h6>
+                                    <p class="card-text" id="gmap"></p>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">Phone Numbers</h6>
+                                    <p class="card-text mb-1">
+                                        <i class="bi bi-telephone-fill"></i>
+                                        <span id="pn1"></span>
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-telephone-fill"></i>
+                                        <span id="pn2"></span>
+                                    </p>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">E-mail</h6>
+                                    <p class="card-text" id="email"></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 p-2">
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">Social Links</h6>
+                                    <p class="card-text mb-1">
+                                        <i class="bi bi-facebook me-1"></i>
+                                        <span id="fb"></span>
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-instagram me-1"></i>
+                                        <span id="insta"></span>
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-twitter me-1"></i>
+                                        <span id="tw"></span>
+                                    </p>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="card-subtitle mb-1 fw-bold">iFrame</h6>
+                                    <iframe id="iframe" class="border p-2 w-100" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+            <!-- Contacts Details Section Ends -->
+
+
         </div>    
     </div>
 </div>
 
+
+
 <script>
+    
     let general_data;
+    
+    let general_s_form = document.getElementById('general_s_form');
+    let site_title_inp = document.getElementById('site_title_inp');
+    let site_about_inp = document.getElementById('site_about_inp');
 
     function get_general(){
         let site_title = document.getElementById('site_title');
         let site_about = document.getElementById('site_about');
-
-        let site_title_inp = document.getElementById('site_title_inp');
-        let site_about_inp = document.getElementById('site_about_inp');
 
         let shutdown_toggle = document.getElementById('shutdown-toggle');
 
@@ -99,6 +168,11 @@
 
         xhr.send('get_general');
     }
+
+    general_s_form.addEventListener('submit', function(e){
+        e.preventDefault();
+        upd_general(site_title_inp.value, site_about_inp.value);
+    });
 
     function upd_general(site_title_val, site_about_val){
         let xhr = new XMLHttpRequest();

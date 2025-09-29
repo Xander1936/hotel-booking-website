@@ -46,42 +46,39 @@
         </div>
     </div>
 
-    
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/about/hotel.svg" width="200px">
-                    <h4 class="mt-3">100+ ROOMS</h4>
+                    <img src="images/about/hotel.svg" class="img-fluid" alt="100+ Rooms">
+                    <h5 class="fw-bold mt-3">100+ ROOMS</h5>
                 </div>
             </div>
 
             <div class="col-lg-3 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/about/customers.svg" width="200px">
-                    <h4 class="mt-3">200+ CUSTOMERS</h4>
-                </div>
-            </div>
-
-
-
-            <div class="col-lg-3 mb-4 px-4">
-                <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/about/rating.svg" width="200px">
-                    <h4 class="mt-3">150+ REVIEWS</h4>
+                    <img src="images/about/customers.svg" class="img-fluid" alt="200+ Clients">
+                    <h5 class="fw-bold mt-3">200+ CUSTOMERS</h5>
                 </div>
             </div>
 
             <div class="col-lg-3 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/about/staff.svg" width="200px">
-                    <h4 class="mt-3">200+ STAFFS</h4>
+                    <img src="images/about/rating.svg" class="img-fluid" alt="150+ Reviews">
+                    <h5 class="fw-bold mt-3">150+ REVIEWS</h5>
                 </div>
             </div>
 
-            
+            <div class="col-lg-3 mb-4 px-4">
+                <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
+                    <img src="images/about/staff.svg" class="img-fluid" alt="200+ Staffs">
+                    <h5 class="fw-bold mt-3">200+ STAFFS</h5>
+                </div>
+            </div>  
         </div>
     </div>
+
+    
 
     <h3 class="my-5 fw-bold h-font text-center">
         MANAGEMENT TEAM
@@ -91,43 +88,41 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div> 
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div> 
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div> 
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
+                    <img src="images/about/team.jpg" class="img-fluid w-100">
                     <h5 class="mt-2">Random Name</h5>
                 </div>      
-
-                <div class="swiper-pagination"></div> 
             </div>
         </div>
     </div>
