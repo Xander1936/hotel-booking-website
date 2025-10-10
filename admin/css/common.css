@@ -74,6 +74,7 @@ html, body {
 #dashboard-menu{
     position: fixed;
     height: 100%;
+    z-index: 11;
 }
 
 .availability-form {
@@ -81,10 +82,13 @@ html, body {
     z-index: 2;
     position: relative;
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
     .availability-form{
         margin-top: 25px;
         padding: 0 35px;
+    }
+    .modal-body .form-label {
+        font-size: 14px;  /* Ajustez la taille des étiquettes sur les petits écrans */
     }
 }
 
@@ -116,7 +120,7 @@ div.login-form{
 
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     #dashboard-menu{
         height: auto;
         width: 100%;

@@ -8,8 +8,8 @@
             <script>
                 window.location.href='index.php';
             </script>";
-        }
-        session_regenerate_id(true);
+            exit;
+        }   
     }
 
     function redirect($url){
@@ -18,6 +18,7 @@
                 window.location.href='$url';
             </script>
         ";
+        exit;
     }
 
     function alert($type, $msg) {

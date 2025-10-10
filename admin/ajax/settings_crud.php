@@ -32,4 +32,24 @@
         $res = update($q,$values, 'ii');
         echo $res; 
     }
+
+    if(isset($_POST['get_contacts']))
+    {
+        $q = "SELECT * FROM `contact_details` WHERE  `sr_no`=? ";
+        $values = [1];
+        $res = select($q, $values, "i");
+        $data = mysqli_fetch_assoc($res);
+        $json_data = json_encode($data);
+        echo $json_data;
+    }
+
+    if(isset($_POST['upd_contacts']))
+    {
+        $frm_data2 = filteration($_POST['upd_contacts']);
+
+        $q2 = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `email2`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
+        $values2 = [$frm_data2['address'], $frm_data2['gmap'], $frm_data2['phone1'], $frm_data2['phone2'], $frm_data2['email1'], $frm_data2['email2'], $frm_data2['fb'], $frm_data2['insta'], $frm_data2['tw'],$frm_data2['iframe'], 1];
+        $res2 = update($q2, $values2, 'sssssssssi');
+        echo $res2; 
+    }
 ?>
