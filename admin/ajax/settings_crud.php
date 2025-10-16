@@ -43,13 +43,47 @@
         echo $json_data;
     }
 
-    if(isset($_POST['upd_contacts']))
-    {
-        $frm_data2 = filteration($_POST['upd_contacts']);
+    if(isset($_POST['upd_contacts'])) {
+        // Filter input
+        $frm_data = filteration($_POST);
 
-        $q2 = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `email2`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
-        $values2 = [$frm_data2['address'], $frm_data2['gmap'], $frm_data2['phone1'], $frm_data2['phone2'], $frm_data2['email1'], $frm_data2['email2'], $frm_data2['fb'], $frm_data2['insta'], $frm_data2['tw'],$frm_data2['iframe'], 1];
-        $res2 = update($q2, $values2, 'sssssssssi');
-        echo $res2; 
+        $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
+        $values = [
+            $frm_data['address'], 
+            $frm_data['gmap'], 
+            $frm_data['pn1'], // Changed to match the input names
+            $frm_data['pn2'], 
+            $frm_data['email'], // Changed to match the input names
+            $frm_data['fb'], 
+            $frm_data['insta'], 
+            $frm_data['tw'], 
+            $frm_data['iframe'], 
+            1
+        ];
+        $res = update($q, $values, 'sssssssssii');
+        echo $res; 
+    }
+
+    if(isset($_POST['add_member']))
+    {
+        $frm_data = filteration($_POST);
+
+        $img_r = uploadImage($_FILES['picture'],ABOUT_FOLDER);
+
+        if($img_r == 'inv_img'){
+            echo $img_r;
+        }
+        else if($img_r == 'inv_size'){
+            echo $img_r;
+        }
+        else if($img_r == 'upd_failed'){
+            echo $img_r;
+        }
+        else{
+            $q = "INSERT INTO `team_details`(`name`, `picture`) VALUES (?,?)";
+            $values = [$frm_data['name'], $img_r];
+            $res = insert($q, $values, 'ss');
+            echo $res;
+        }
     }
 ?>

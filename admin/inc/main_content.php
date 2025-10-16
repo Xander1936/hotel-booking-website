@@ -1,3 +1,4 @@
+
 <div class="container-fluid" id="main-content">
     <div class="row">
         <div class="col-lg-10 ms-3 p-3 overflow-hidden">
@@ -196,25 +197,83 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="contacts_inp(contacts_data)" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit" onclick="upd_contacts(contacts_s_form)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
             <!-- Contacts Details Modal Section Ends -->
+            
+            <!-- Management Team section -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="card-title m-0">Management Team</h5>
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#team-s">
+                            <i class="bi bi-plus-square"></i> Add
+                        </button>
+                    </div>
+                    
+                    <div class="row" id="team-data">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Management Team section Ends -->
+
+
+            <!-- Management Team Modal Section Starts -->
+            <div class="modal fade" id="team-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form id="team_s_form">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title">Add Team Member</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold" for="member_name_inp">Name</label>
+                                    <input type="text" name="member_name" id="member_name_inp" class="form-control shadow-none" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold" for="site_about_inp">Picture</label>
+                                    <input type="file" name="member_picture" id="member_picture_inp" accept="[.jpg, .png, .webp, .jpeg]" class="form-control shadow-none" required>
+                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            
+            <!-- Management Team Modal Ends -->
+            
+        
         </div>    
     </div>
 </div>
 
+
+
 <script>
     let general_data, contacts_data;
 
-    const general_s_form = document.getElementById('general_s_form');
-    const site_title_inp = document.getElementById('site_title_inp');
-    const site_about_inp = document.getElementById('site_about_inp');
-
+    let general_s_form = document.getElementById('general_s_form');
+    let site_title_inp = document.getElementById('site_title_inp');
+    let site_about_inp = document.getElementById('site_about_inp');
+ 
     let contacts_s_form = document.getElementById('contacts_s_form');
+
+    let team_s_form = document.getElementById('team_s_form');
+    let member_name_inp = document.getElementById('member_name_inp');
+    let member_picture_inp = document.getElementById('member_picture_inp');
 
     function get_general(){
         const site_title = document.getElementById('site_title');
@@ -262,6 +321,8 @@
 
         xhr.send('site_title=' + encodeURIComponent(site_title_val) + '&site_about=' + encodeURIComponent(site_about_val) + '&upd_general');
     }
+
+    // Piste à explorer: function upd_shutdown(Val)
 
     function upd_shutdown(isChecked){
         const xhr = new XMLHttpRequest();
@@ -313,29 +374,17 @@
         }
     }
 
-    contacts_s_form.addEventListener('submit', function(e){
-        e.preventDefault();
-        upd_contacts(
-            document.getElementById('address_inp').value,
-            document.getElementById('gmap_inp').value,
-            document.getElementById('pn1_inp').value,
-            document.getElementById('pn2_inp').value,
-            document.getElementById('email_inp').value,
-            document.getElementById('fb_inp').value,
-            document.getElementById('insta_inp').value,
-            document.getElementById('tw_inp').value,
-            document.getElementById('iframe_inp').value
-        );
+    contacts_s_form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        upd_contacts(); // Call the function to update contacts
     });
 
-    function upd_contacts(){
-        let index = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw', 'iframe'];
+    function upd_contacts() {
         let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
-
         let data_str = "";
 
-        for(i=0; i<index.length; i++){
-            data_str += index[i] + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
+        for (let i = 0; i < contacts_inp_id.length; i++) {
+            data_str += contacts_inp_id[i].replace('_inp', '') + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
         }
         data_str += "upd_contacts";
 
@@ -343,20 +392,62 @@
         xhr.open("POST", "ajax/settings_crud.php", true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-        xhr.onload = function(){
+        xhr.onload = function() {
             const myModal = document.getElementById('contacts-s');
             const modal = bootstrap.Modal.getInstance(myModal);
             modal.hide();
 
-            if(this.responseText == 1){
+            if (this.responseText == 1) {
                 alert('success', 'Changes saved!');
-                get_contacts();
+                get_contacts(); // Refresh contacts data
             } else {
                 alert('error', 'No Changes made!');
             }
         };
-
         xhr.send(data_str);
+    }
+
+    team_s_form.addEventListener('submit', function(e){
+        e.preventDefault();
+        add_member();
+    });
+
+    function add_member(){
+        let data = new FormData();
+        data.append('name', member_name_inp.value);
+        data.append('picture', member_picture_inp.files[0]);
+        data.append('add_member','');
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/settings_crud.php", true);
+        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function(){
+            // console.log(this.responseText);
+            var myModal = document.getElementById('team-s');
+            var modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+
+            if (this.responseText == 'inv_img'){
+                alert('error', 'Only JPG, PNG and WEBP images are allowed!');
+            }
+            else if(this.responseText == 'inv_size'){
+                alert('error', 'Image size should be less than 2MB!');
+            }
+            else if(this.responseText == 'upd_failed'){
+                alert('error', 'Image upload failed. Server Down! Try again!');
+            }
+            else if(!isNaN(this.responseText) && this.responseText > 0){
+                alert('success', 'New member added!');
+                team_s_form.reset();
+                get_team();
+            }
+            else{
+                alert('error', 'Member addition failed. Try again!');
+            }
+        };
+
+        xhr.send(data); 
     }
 
     window.onload = function(){
