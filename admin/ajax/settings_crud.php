@@ -86,4 +86,44 @@
             echo $res;
         }
     }
+
+    if(isset($_POST['get_members'])){
+        $res = selectAll('team_details');
+        
+        while($row = mysqli_fetch_assoc($res)){
+            // $path = ABOUT_FOLDER.$row['picture'];
+            $path = ABOUT_IMG_PATH;
+            echo <<<data
+            <div class="col-md-2 mb-3" style="width: 200px; height: auto;">
+            <div class="card bg-dark text-white">
+                        <!-- <img src="http://localhost/hotel-booking-website/images/about/team.jpg" class="card-img" alt="Team Image"> -->
+                        <img src="$path$row[picture]" class="card-img" alt="Team Image" style="width: 100%; height: 200px;">
+                        <div class="card-img-overlay d-flex text-end">
+                            <button type="button" onclick="rem_member($row[sr_no])" class="btn btn-danger btn-sm ms-auto shadow-none" style="height: 30px; width: auto;">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </div>
+                        <p class="card-text text-center px-3 py-2"><small>$row[name]</small></p>
+                    </div>
+                </div>
+            data;
+        }
+    }
+
+    if(isset($POST['rem_member'])){
+        $frm_data = filteration($_POST);
+        $values = [$frm_data['rem_member']];
+
+        $pre_q = "SELECT * FROM 'team_details' WHERE `sr_no=?`";
+        $res = select($pre_q, $values, 'i');
+        $img = mysqli_fetch_assoc($res);
+
+        if(deleteImage($img['picture'], ABOUT_FOLDER)){
+            $q = "DELETE FROM `team_details` WHERE `sr_no`=? ";
+            $res = delete($q, $values, 'i');
+            echo $res;
+        }else {
+            echo 0;
+        }
+    }
 ?>
