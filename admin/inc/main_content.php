@@ -490,25 +490,6 @@
         xhr.send('rem_member='+val);
     }
 
-    // function rem_member(val) {
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "ajax/settings_crud.php", true);
-    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    //     xhr.onload = function() {
-    //         // Vérification de la réponse du serveur
-    //         if (this.responseText == '1') { // Utiliser des quotes pour comparer avec une chaîne
-    //             alert('Success: Member removed!'); // Message de succès
-    //             get_members(); // Mettre à jour la liste des membres
-    //         } else {
-    //             alert('Error: ' + this.responseText); // Afficher le message d'erreur du serveur
-    //         }
-    //     };
-
-    //     // Envoi de la requête avec l'identifiant du membre
-    //     xhr.send('rem_member=' + encodeURIComponent(val)); // Utiliser encodeURIComponent pour sécuriser la valeur
-    // }
-
     window.onload = function(){
         get_general();
         get_contacts();
