@@ -110,20 +110,39 @@
         }
     }
 
-    if(isset($POST['rem_member'])){
+    // if(isset($_POST['rem_member'])){
+    //     $frm_data = filteration($_POST);
+    //     $values = [$frm_data['rem_member']];
+
+    //     $pre_q = "SELECT * FROM 'team_details' WHERE `sr_no=?`";
+    //     $res = select($pre_q, $values, 'i');
+    //     $img = mysqli_fetch_assoc($res);
+
+    //     if(deleteImage($img['picture'], ABOUT_FOLDER)){
+    //         $q = "DELETE FROM `team_details` WHERE `sr_no`=? ";
+    //         $res = delete($q, $values, 'i');
+    //         echo $res;
+    //     }else {
+    //         echo 0;
+    //     }
+    // }
+
+    if (isset($_POST['rem_member'])) {
         $frm_data = filteration($_POST);
         $values = [$frm_data['rem_member']];
 
-        $pre_q = "SELECT * FROM 'team_details' WHERE `sr_no=?`";
+        // Corrected SQL syntax: use backticks for table and column names
+        $pre_q = "SELECT * FROM `team_details` WHERE `sr_no` = ?";
         $res = select($pre_q, $values, 'i');
         $img = mysqli_fetch_assoc($res);
 
-        if(deleteImage($img['picture'], ABOUT_FOLDER)){
-            $q = "DELETE FROM `team_details` WHERE `sr_no`=? ";
+        // Check if the image retrieval was successful before attempting to delete
+        if ($img && deleteImage($img['picture'], ABOUT_FOLDER)) {
+            $q = "DELETE FROM `team_details` WHERE `sr_no` = ?";
             $res = delete($q, $values, 'i');
-            echo $res;
-        }else {
-            echo 0;
+            echo $res; // Return result of the delete operation
+        } else {
+            echo 0; // Return 0 if image deletion fails or no image found
         }
     }
 ?>

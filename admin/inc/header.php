@@ -4,7 +4,7 @@
         </div>
 
         <div class="d-flex">
-            <div class="col-lg-2 bg-dark border-top border-3 border-secondary" id="dashboard-menu" style="height: 100vh;">
+            <div class="col-lg-2 bg-dark border-top border-3 border-secondary" id="dashboard-menu" style="height:auto;">
                 <nav class="navbar navbar-expand-lg navbar-dark flex-column" style="height: 100%;">
                     <div class="container-fluid flex-lg-column align-items-stretch h-auto" style="height: auto;">
                         <div class="admin-menu d-flex align-items-center m-auto p-1 justify-content-between">
