@@ -121,7 +121,7 @@
                                     <iframe
                                         class="border p-2 rounded" 
                                         id="iframe"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230661.04484231502!2d81.6367733161178!3d25.402171897790073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1756935742332!5m2!1sfr!2scm" 
+                                        src="" 
                                         loading="lazy"
                                     ></iframe>
                                 </div>
