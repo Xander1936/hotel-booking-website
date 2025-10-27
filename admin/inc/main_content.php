@@ -270,7 +270,7 @@
     let general_s_form = document.getElementById('general_s_form');
     let site_title_inp = document.getElementById('site_title_inp');
     let site_about_inp = document.getElementById('site_about_inp');
- 
+
     let contacts_s_form = document.getElementById('contacts_s_form');
 
     let team_s_form = document.getElementById('team_s_form');
