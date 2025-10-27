@@ -365,24 +365,45 @@
     
     
     <!-- REACH US Section Starts -->
+
+    <?php  
+        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+        // print_r($contact_r);
+    ?>
+
     <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>
 
     <div class="container" id="contact">
         <div class="row">
             <div class="col-8 col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230661.04484231502!2d81.6367733161178!3d25.402171897790073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1756935742332!5m2!1sfr!2scm" loading="lazy"></iframe>
+                <iframe 
+                    class="w-100 rounded" 
+                    height="320px" 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d461321.73752665165!2d81.801585!3d25.402264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1761554044106!5m2!1sfr!2scm" 
+                    loading="lazy"
+                ></iframe>
             </div>
             <div class="col-4 d-block">
                 <div class="col-lg-12 col-md-12">
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Call Us</h5>
-                        <a href="tel: +237691644122" class="d-inline-block mb-2 text-decoration-none text-dark">
-                            <i class="bi bi-telephone-fill"></i> +237691644122
+                        <a href="tel: <?php echo $contact_r['pn1']; ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                            <i class="bi bi-telephone-fill"></i> <?php echo $contact_r['pn1']; ?>
                         </a>
                         <br>
-                        <a href="tel: +237691644122" class="d-inline-block text-decoration-none text-dark">
-                            <i class="bi bi-whatsapp"></i> +237691644122
-                        </a>
+                        <?php 
+                            if($contact_r['pn2'] != '') {
+                                echo<<<data
+                                    <a href="tel: +237652543442" class="d-inline-block text-decoration-none text-dark">
+                                        <i class="bi bi-telephone-fill"></i> +237652543442
+                                    </a>
+                                
+                                data;
+                            }
+                        ?>
+                        
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">

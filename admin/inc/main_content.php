@@ -119,9 +119,8 @@
                                 <div class="mb-4">                                      
                                     <h6 class="card-subtitle mb-1 fw-bold">iFrame</h6>
                                     <iframe
-                                        class="border p-2 rounded" 
+                                        class="border p-2 w-100 rounded" 
                                         id="iframe"
-                                        src="" 
                                         loading="lazy"
                                     ></iframe>
                                 </div>
@@ -412,6 +411,39 @@
         };
         xhr.send(data_str);
     }
+
+    // contacts_s_form.addEventListener('submit', function(e) {
+    //     e.preventDefault(); // Prevent the default form submission
+    //     upd_contacts(); // Call the function to update contacts
+    // });
+
+    // function upd_contacts() {
+    //     let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
+    //     let data_str = "";
+
+    //     for (let i = 0; i < contacts_inp_id.length; i++) {
+    //         data_str += contacts_inp_id[i].replace('_inp', '') + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
+    //     }
+    //     data_str += "upd_contacts";
+
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "ajax/settings_crud.php", true);
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    //     xhr.onload = function() {
+    //         const myModal = document.getElementById('contacts-s');
+    //         const modal = bootstrap.Modal.getInstance(myModal);
+    //         modal.hide();
+
+    //         if (this.responseText == 1) {
+    //             alert('success', 'Changes saved!');
+    //             get_contacts(); // Refresh contacts data
+    //         } else {
+    //             alert('error', 'No Changes made!');
+    //         }
+    //     };
+    //     xhr.send(data_str);
+    // }
 
     team_s_form.addEventListener('submit', function(e){
         e.preventDefault();

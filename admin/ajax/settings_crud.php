@@ -43,26 +43,80 @@
         echo $json_data;
     }
 
-    if(isset($_POST['upd_contacts'])) {
+    if (isset($_POST['upd_contacts'])) {
         // Filter input
         $frm_data = filteration($_POST);
 
-        $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
+        // Prepare the SQL update statement
+        $q = "UPDATE `contact_details` SET 
+                `address`=?, 
+                `gmap`=?, 
+                `phone1`=?, 
+                `phone2`=?, 
+                `email1`=?, 
+                `fb`=?, 
+                `insta`=?, 
+                `tw`=?, 
+                `iframe`=? 
+                WHERE `sr_no`=?";
         $values = [
             $frm_data['address'], 
             $frm_data['gmap'], 
-            $frm_data['pn1'], // Changed to match the input names
+            $frm_data['pn1'], 
             $frm_data['pn2'], 
-            $frm_data['email'], // Changed to match the input names
+            $frm_data['email'], 
             $frm_data['fb'], 
             $frm_data['insta'], 
             $frm_data['tw'], 
             $frm_data['iframe'], 
-            1
+            1 // Ensure this is the correct ID for the record you want to update
         ];
-        $res = update($q, $values, 'sssssssssii');
+        $res = update($q, $values, 'sssssssii');
         echo $res; 
     }
+
+    // if (isset($_POST['upd_contacts'])) {
+    //     // Filter input
+    //     $frm_data = filteration($_POST);
+
+    //     // Prepare the SQL update statement
+    //     $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
+    //     $values = [
+    //         $frm_data['address'], 
+    //         $frm_data['gmap'], 
+    //         $frm_data['pn1'], // Ensure these match your form input names
+    //         $frm_data['pn2'], 
+    //         $frm_data['email'], 
+    //         $frm_data['fb'], 
+    //         $frm_data['insta'], 
+    //         $frm_data['tw'], 
+    //         $frm_data['iframe'], 
+    //         1 // Ensure this is the correct ID for the record you want to update
+    //     ];
+    //     $res = update($q, $values, 'sssssssss');
+    //     echo $res; 
+    // }
+
+    // if(isset($_POST['upd_contacts'])) {
+    //     // Filter input
+    //     $frm_data = filteration($_POST);
+
+    //     $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
+    //     $values = [
+    //         $frm_data['address'], 
+    //         $frm_data['gmap'], 
+    //         $frm_data['pn1'], // Changed to match the input names
+    //         $frm_data['pn2'], 
+    //         $frm_data['email'], // Changed to match the input names
+    //         $frm_data['fb'], 
+    //         $frm_data['insta'], 
+    //         $frm_data['tw'], 
+    //         $frm_data['iframe'], 
+    //         1
+    //     ];
+    //     $res = update($q, $values, 'sssssssssii');
+    //     echo $res; 
+    // }
 
     if(isset($_POST['add_member']))
     {
@@ -110,22 +164,6 @@
         }
     }
 
-    // if(isset($_POST['rem_member'])){
-    //     $frm_data = filteration($_POST);
-    //     $values = [$frm_data['rem_member']];
-
-    //     $pre_q = "SELECT * FROM 'team_details' WHERE `sr_no=?`";
-    //     $res = select($pre_q, $values, 'i');
-    //     $img = mysqli_fetch_assoc($res);
-
-    //     if(deleteImage($img['picture'], ABOUT_FOLDER)){
-    //         $q = "DELETE FROM `team_details` WHERE `sr_no`=? ";
-    //         $res = delete($q, $values, 'i');
-    //         echo $res;
-    //     }else {
-    //         echo 0;
-    //     }
-    // }
 
     if (isset($_POST['rem_member'])) {
         $frm_data = filteration($_POST);

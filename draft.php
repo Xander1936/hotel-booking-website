@@ -121,7 +121,7 @@
                                     <iframe
                                         class="border p-2 rounded" 
                                         id="iframe"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230661.04484231502!2d81.6367733161178!3d25.402171897790073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1756935742332!5m2!1sfr!2scm" 
+                                        src="" 
                                         loading="lazy"
                                     ></iframe>
                                 </div>
@@ -413,6 +413,39 @@
         xhr.send(data_str);
     }
 
+    // contacts_s_form.addEventListener('submit', function(e) {
+    //     e.preventDefault(); // Prevent the default form submission
+    //     upd_contacts(); // Call the function to update contacts
+    // });
+
+    // function upd_contacts() {
+    //     let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
+    //     let data_str = "";
+
+    //     for (let i = 0; i < contacts_inp_id.length; i++) {
+    //         data_str += contacts_inp_id[i].replace('_inp', '') + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
+    //     }
+    //     data_str += "upd_contacts";
+
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "ajax/settings_crud.php", true);
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    //     xhr.onload = function() {
+    //         const myModal = document.getElementById('contacts-s');
+    //         const modal = bootstrap.Modal.getInstance(myModal);
+    //         modal.hide();
+
+    //         if (this.responseText == 1) {
+    //             alert('success', 'Changes saved!');
+    //             get_contacts(); // Refresh contacts data
+    //         } else {
+    //             alert('error', 'No Changes made!');
+    //         }
+    //     };
+    //     xhr.send(data_str);
+    // }
+
     team_s_form.addEventListener('submit', function(e){
         e.preventDefault();
         add_member();
@@ -483,7 +516,7 @@
                 alert('success', 'Member removed!');
                 get_members();
             }else{
-                alert('error', 'Server down!');
+                alert('error', 'Server down! Try again later.');
             }
         };
 
