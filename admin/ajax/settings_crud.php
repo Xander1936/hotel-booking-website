@@ -51,72 +51,29 @@
         $q = "UPDATE `contact_details` SET 
                 `address`=?, 
                 `gmap`=?, 
-                `phone1`=?, 
-                `phone2`=?, 
-                `email1`=?, 
+                `pn1`=?, 
+                `pn2`=?, 
+                `email`=?, 
                 `fb`=?, 
                 `insta`=?, 
                 `tw`=?, 
                 `iframe`=? 
                 WHERE `sr_no`=?";
+        // Ensure this is the correct ID for the record you want to update
         $values = [
             $frm_data['address'], 
             $frm_data['gmap'], 
             $frm_data['pn1'], 
             $frm_data['pn2'], 
-            $frm_data['email'], 
+            $frm_data['email'],  
             $frm_data['fb'], 
             $frm_data['insta'], 
             $frm_data['tw'], 
-            $frm_data['iframe'], 
-            1 // Ensure this is the correct ID for the record you want to update
+            $frm_data['iframe'],1
         ];
-        $res = update($q, $values, 'sssssssii');
+        $res = update($q, $values, 'sssssssssi');
         echo $res; 
     }
-
-    // if (isset($_POST['upd_contacts'])) {
-    //     // Filter input
-    //     $frm_data = filteration($_POST);
-
-    //     // Prepare the SQL update statement
-    //     $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
-    //     $values = [
-    //         $frm_data['address'], 
-    //         $frm_data['gmap'], 
-    //         $frm_data['pn1'], // Ensure these match your form input names
-    //         $frm_data['pn2'], 
-    //         $frm_data['email'], 
-    //         $frm_data['fb'], 
-    //         $frm_data['insta'], 
-    //         $frm_data['tw'], 
-    //         $frm_data['iframe'], 
-    //         1 // Ensure this is the correct ID for the record you want to update
-    //     ];
-    //     $res = update($q, $values, 'sssssssss');
-    //     echo $res; 
-    // }
-
-    // if(isset($_POST['upd_contacts'])) {
-    //     // Filter input
-    //     $frm_data = filteration($_POST);
-
-    //     $q = "UPDATE `contact_details` SET `address`=?, `gmap`=?, `phone1`=?, `phone2`=?, `email1`=?, `fb`=?, `insta`=?, `tw`=?, `iframe`=? WHERE `sr_no`=?";
-    //     $values = [
-    //         $frm_data['address'], 
-    //         $frm_data['gmap'], 
-    //         $frm_data['pn1'], // Changed to match the input names
-    //         $frm_data['pn2'], 
-    //         $frm_data['email'], // Changed to match the input names
-    //         $frm_data['fb'], 
-    //         $frm_data['insta'], 
-    //         $frm_data['tw'], 
-    //         $frm_data['iframe'], 
-    //         1
-    //     ];
-    //     $res = update($q, $values, 'sssssssssii');
-    //     echo $res; 
-    // }
 
     if(isset($_POST['add_member']))
     {

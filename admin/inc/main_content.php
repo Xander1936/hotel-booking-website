@@ -347,8 +347,8 @@
     }
 
     function get_contacts(){
-        const contacts_p_id = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw', 'iframe']; 
-        const iframe = document.getElementById('iframe');
+        let contacts_p_id = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw']; 
+        let iframe = document.getElementById('iframe');
         
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "ajax/settings_crud.php", true);
@@ -357,7 +357,9 @@
         xhr.onload = function(){
             contacts_data = JSON.parse(this.responseText);
             contacts_data = Object.values(contacts_data);
-            for(i=0; i<contacts_p_id.length; i++){
+            console.log(contacts_data);
+            
+            for(i = 0; i < contacts_p_id.length; i++){
                 document.getElementById(contacts_p_id[i]).innerText = contacts_data[i+1];
             } 
             iframe.src = contacts_data[9];
@@ -365,11 +367,6 @@
         };
 
         xhr.send('get_contacts');
-    }
-
-    function resetGeneralSettings() {
-        site_title_inp.value = general_data.site_title;
-        site_about_inp.value = general_data.site_about;
     }
 
     function contacts_inp(data){
@@ -385,12 +382,15 @@
     });
 
     function upd_contacts() {
+        let index = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw', 'iframe'];
         let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
         let data_str = "";
 
-        for (let i = 0; i < contacts_inp_id.length; i++) {
-            data_str += contacts_inp_id[i].replace('_inp', '') + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
+        for (i = 0; i < index.length; i++) {
+            data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
+
         }
+        // console.log(data_str);
         data_str += "upd_contacts";
 
         let xhr = new XMLHttpRequest();
@@ -412,38 +412,14 @@
         xhr.send(data_str);
     }
 
-    // contacts_s_form.addEventListener('submit', function(e) {
-    //     e.preventDefault(); // Prevent the default form submission
-    //     upd_contacts(); // Call the function to update contacts
-    // });
+    function resetGeneralSettings() {
+        site_title_inp.value = general_data.site_title;
+        site_about_inp.value = general_data.site_about;
+    }
 
-    // function upd_contacts() {
-    //     let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
-    //     let data_str = "";
+    
 
-    //     for (let i = 0; i < contacts_inp_id.length; i++) {
-    //         data_str += contacts_inp_id[i].replace('_inp', '') + '=' + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
-    //     }
-    //     data_str += "upd_contacts";
-
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "ajax/settings_crud.php", true);
-    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    //     xhr.onload = function() {
-    //         const myModal = document.getElementById('contacts-s');
-    //         const modal = bootstrap.Modal.getInstance(myModal);
-    //         modal.hide();
-
-    //         if (this.responseText == 1) {
-    //             alert('success', 'Changes saved!');
-    //             get_contacts(); // Refresh contacts data
-    //         } else {
-    //             alert('error', 'No Changes made!');
-    //         }
-    //     };
-    //     xhr.send(data_str);
-    // }
+    
 
     team_s_form.addEventListener('submit', function(e){
         e.preventDefault();
@@ -527,4 +503,5 @@
         get_contacts();
         get_members();
     }
+
 </script>
