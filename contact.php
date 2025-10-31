@@ -12,9 +12,6 @@
 <body class="bg-light">
     <?php require("inc/header.php"); ?>
 
-    
-
-    
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">
             CONTACT US
@@ -26,6 +23,13 @@
         </p>
     </div>
 
+    <?php 
+        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+        // print_r($contact_r);
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
@@ -33,40 +37,46 @@
                     <iframe class="w-100 rounded mb-4" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.153632622634!2d85.3131196745962!3d27.71722323279454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1909f5f0b8b7%3A0x7c8a5f1a5e6e4b6a!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700786226146!5m2!1sen!2snp" 
                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5>Address</h5>
-                    <a href="https://goo.gl/maps/TlYM8d4fJsoczstd6" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
-                        <i class="bi bi-geo-alt-fill"></i> XYZ, Prayagraj, Uttar Pradesh
+                    <a href="<?php echo $contact_r['gmap']; ?>" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
+                        <i class="bi bi-geo-alt-fill"></i> <?php echo $contact_r['address']; ?>
                     </a>
                     <h5 class="mt-4">Call Us</h5>
-                    <a href="tel: +237691644122" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +237691644122
+                    <a href="tel: +<?php echo $contact_r['pn1']; ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1']; ?>
                     </a>
                     <br>
-                    <a href="tel: +237691644122" class="d-inline-block text-decoration-none text-dark">
-                        <i class="bi bi-whatsapp"></i> +237691644122
-                    </a>
+                    <?php 
+                        if($contact_r['pn2'] != ''){
+                            echo<<<data
+                                <a href="tel: +$contact_r[pn2]" class="d-inline-block text-decoration-none text-dark">
+                                    <i class="bi bi-telephone-fill"></i> +$contact_r[pn2]
+                                </a>
+                            data;
+                        }
+                    ?>
+                    <br>
                     <h5 class="mt-4">Email</h5>
-                    <a href="mailto:alexandrehervemassodamambeleck@gmail.com" class="d-inline-block text-decoration-none text-dark">
-                        <i class="bi bi-envelope-fill"></i> info@xanderhotel.com
+                    <a href="mailto:<?php echo $contact_r['email']; ?>" class="d-inline-block text-decoration-none text-dark">
+                        <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email']; ?>
                     </a>
-                    <div class="d-flex text-wrap align-items-center justify-text-center">
-                        <h5 class="mt-3 mr-2">Follow Us </h5>
-                        <div class="mt-4 d-flex ml-2">
-                            <a href="http://linkedin.com/in/alexandre-massoda" class="d-inline-block mb-3 " target="_blank">
-                                <span class="badge bg-light text-dark fs-5 me-2">
-                                    <i class="bi bi-linkedin"></i>
-                                </span>
+
+                    <h5 class="mt-4">Follow Us</h5>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <?php 
+                                if($contact_r['tw'] != ''){
+                                    echo <<<data
+                                        <a href="$contact_r[tw]" class="d-inline-block text-dark fs-5 me-2">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                    data;
+                                }
+                            ?>
+                            <a href="<?php echo $contact_r['fb']; ?>" class="d-inline-block text-dark fs-5 me-2" target="_blank">
+                                <i class="bi bi-facebook"></i>  
                             </a>
-                            <br>
-                            <a href="#" class="d-inline-block mb-3 " target="_blank">
-                                <span class="badge bg-light text-dark fs-5 me-2">
-                                    <i class="bi bi-facebook"></i>  
-                                </span>
-                            </a>
-                            <br>
-                            <a href="#" class="d-inline-block mb-3 " target="_blank">
-                                <span class="badge bg-light text-dark fs-5 me-2">
-                                    <i class="bi bi-instagram"></i> 
-                                </span>
+                            <a href="<?php echo $contact_r['insta']; ?>" class="d-inline-block text-dark fs-5 me-2" target="_blank">
+                                <i class="bi bi-instagram"></i> 
                             </a>
                         </div>
                     </div>
@@ -99,8 +109,6 @@
                     </form>
                 </div>
             </div>
-            
-            
         </div>
     </div>
     
@@ -110,4 +118,3 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
-

@@ -155,13 +155,13 @@
                                                 <label class="form-label fw-bold">Phone Numbers (with country code)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
+                                                    <input type="number" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn2" id="pn2_inp" class="form-control shadow-none">
+                                                    <input type="number" name="pn2" id="pn2_inp" class="form-control shadow-none">
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -201,76 +201,6 @@
                     </form>
                 </div>
             </div>
-            <!-- <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <form id="contacts_s_form">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Contacts Settings</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="container-fluid p-0">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label fw-bold">Address</label>
-                                                <input type="text" name="address" id="address_inp" class="form-control shadow-none" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label fw-bold">Google Map Link</label>
-                                                <input type="text" name="gmap" id="gmap_inp" class="form-control shadow-none" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label fw-bold">Phone Numbers (with country code)</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <div class="input-group">
-                                                    <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn2" id="pn2_inp" class="form-control shadow-none">
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label fw-bold">Email</label>
-                                                <input type="email" name="email" id="email_inp" class="form-control shadow-none" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label fw-bold">Social Links</label>
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text"><i class="bi bi-facebook me-1"></i></span>
-                                                    <input type="text" class="form-control shadow-none" name="fb" id="fb_inp" placeholder="Facebook">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text"><i class="bi bi-instagram me-1"></i></span>
-                                                    <input type="text" class="form-control shadow-none" name="insta" id="insta_inp" placeholder="Instagram">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text"><i class="bi bi-twitter me-1"></i></span>
-                                                    <input type="text" class="form-control shadow-none" name="tw" id="tw_inp" placeholder="Twitter">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label fw-bold">iFrame Src</label>
-                                                    <input type="text" class="form-control shadow-none" name="iframe" id="iframe_inp" placeholder="iFrame Src">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" onclick="contacts_inp(contacts_data)" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" onclick="upd_contacts(contacts_s_form)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
             <!-- Contacts Details Modal Section Ends -->
             
             <!-- Management Team section -->
@@ -405,9 +335,9 @@
 
         xhr.onload = function(){
             if(this.responseText == 1 && general_data.shutdown == 0){
-                alert('error', 'Shutdown mode On!');
+                alert('success', 'Shutdown mode On!');
             } else {
-                alert('success', 'Shutdown mode Off!');
+                alert('error', 'Shutdown mode Off!');
             }
         };
         

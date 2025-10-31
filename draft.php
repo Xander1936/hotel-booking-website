@@ -1,4 +1,3 @@
-
 <div class="container-fluid" id="main-content">
     <div class="row">
         <div class="col-lg-10 ms-3 p-3 overflow-hidden">
@@ -156,13 +155,13 @@
                                                 <label class="form-label fw-bold">Phone Numbers (with country code)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
+                                                    <input type="number" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                    <input type="text" name="pn2" id="pn2_inp" class="form-control shadow-none">
+                                                    <input type="number" name="pn2" id="pn2_inp" class="form-control shadow-none">
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -196,7 +195,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="contacts_inp(contacts_data)" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" onclick="upd_contacts(contacts_s_form)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
@@ -336,9 +335,9 @@
 
         xhr.onload = function(){
             if(this.responseText == 1 && general_data.shutdown == 0){
-                alert('error', 'Shutdown mode On!');
+                alert('success', 'Shutdown mode On!');
             } else {
-                alert('success', 'Shutdown mode Off!');
+                alert('error', 'Shutdown mode Off!');
             }
         };
         
@@ -386,11 +385,9 @@
         let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
         let data_str = "";
 
-        for (i = 0; i < index.length; i++) {
-            data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
-
+        for (let i = 0; i < index.length; i++) {
+            data_str += index[i] + "=" + encodeURIComponent(document.getElementById(contacts_inp_id[i]).value) + '&';
         }
-        // console.log(data_str);
         data_str += "upd_contacts";
 
         let xhr = new XMLHttpRequest();
@@ -402,11 +399,14 @@
             const modal = bootstrap.Modal.getInstance(myModal);
             modal.hide();
 
-            if (this.responseText == 1) {
-                alert('success', 'Changes saved !');
+            // Improved error handling
+            if (this.responseText === '1') {
+                alert('success', 'Changes saved!');
                 get_contacts(); // Refresh contacts data
+            } else if (this.responseText === '0') {
+                alert('error', 'No changes made!');
             } else {
-                alert('error', 'No Changes made !');
+                alert('error', 'An unexpected error occurred. Please try again.');
             }
         };
         xhr.send(data_str);
@@ -499,5 +499,5 @@
         get_contacts();
         get_members();
     }
-    
+
 </script>

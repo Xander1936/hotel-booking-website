@@ -355,6 +355,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 
         <div class="col-lg-12 text-center mt-2">
@@ -372,7 +373,8 @@
         $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
         // print_r($contact_r);
     ?>
-
+    <br>
+    <br>
     <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>
     
     <!-- src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d461321.73752665165!2d81.801585!3d25.402264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1761554044106!5m2!1sfr!2scm"  -->
@@ -400,7 +402,6 @@
                                     <a href="tel: +$contact_r[pn2]" class="d-inline-block text-decoration-none text-dark">
                                         <i class="bi bi-telephone-fill"></i> +$contact_r[pn2]
                                     </a>
-                                
                                 data;
                             }
                         ?>
@@ -410,19 +411,26 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Follow Us</h5>
-                        <a href="http://linkedin.com/in/alexandre-massoda" class="text-decoration-none text-dark d-inline-block mb-3" target="_blank">
-                            <span class="badge bg-light text-dark fs-6 p-2">
-                                <i class="bi bi-linkedin"></i> LinkedIn
-                            </span>
-                        </a>
+                        <?php 
+                            if($contact_r['tw'] !=''){
+                                echo <<<data
+                                <a href="$contact_r[tw]" class="text-decoration-none text-dark d-inline-block mb-3" target="_blank">
+                                    <span class="badge bg-light text-dark fs-6 p-2">
+                                        <i class="bi bi-twitter"></i> Twitter
+                                    </span>
+                                </a>
+                                data;
+                            }
+                        ?>
+
                         <br>
-                        <a href="#" class="d-inline-block mb-3 ">
+                        <a href="<?php echo $contact_r['fb']; ?>" class="d-inline-block mb-3 ">
                             <span class="badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-facebook"></i>  Facebook
                             </span>
                         </a>
                         <br>
-                        <a href="#" class="d-inline-block mb-3 ">
+                        <a href="<?php echo $contact_r['insta']; ?>" class="d-inline-block mb-3 ">
                             <span class="badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-instagram"></i>  Instagram
                             </span>
