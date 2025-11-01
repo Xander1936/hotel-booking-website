@@ -95,4 +95,11 @@ html, body {
       display: block;
       width: 100%;
     }
+.box{
+    border-top-color: var(--teal) !important;
+}
+.team-img {
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
+}
 

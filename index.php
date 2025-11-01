@@ -367,12 +367,7 @@
     
     <!-- REACH US Section Starts -->
 
-    <?php  
-        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
-        $values = [1];
-        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
-        // print_r($contact_r);
-    ?>
+    
     <br>
     <br>
     <h2 class="mt-2 pt-2 mb-4 text-center fw-bold h-font text-dark">REACH US</h2>

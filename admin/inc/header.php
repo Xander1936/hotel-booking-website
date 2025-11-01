@@ -20,13 +20,13 @@
                         <div class="collapse navbar-collapse flex-column align-items-stretch mt-1" id="adminDropdown">
                             <ul class="nav nav-pills flex-column">
                                 <li class="nav-item">
-                                    <a href="../admin/dashboard.php" class="nav-link text-white">Dashboard</a>
+                                    <a href="dashboard.php" class="nav-link text-white">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link text-white">Rooms</a>
+                                    <a href="rooms.php" class="nav-link text-white">Rooms</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link text-white">Users</a>
+                                    <a href="users.php" class="nav-link text-white">Users</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="settings.php" class="nav-link text-white">Settings</a>

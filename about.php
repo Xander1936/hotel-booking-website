@@ -6,11 +6,15 @@
     <title>Xander Hotel - ABOUT</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
-    <?php require("inc/links.php"); ?>
+    <?php require("../hotel-booking-website/admin/inc/links.php"); ?>
 
     <style>
         .box{
             border-top-color: var(--teal) !important;
+        }
+        .team-img {
+            width: 30px; /* Adjust the width as needed */
+            height: auto; /* Maintains aspect ratio */
         }
     </style>
         
@@ -78,8 +82,6 @@
         </div>
     </div>
 
-    
-
     <h3 class="my-5 fw-bold h-font text-center">
         MANAGEMENT TEAM
     </h3>
@@ -87,42 +89,18 @@
     <div class="container px-4">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div> 
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div> 
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div> 
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="img-fluid w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>      
+                <?php
+                    $about_r = selectAll('team_details');
+                    $path = ABOUT_IMG_PATH;
+                    while($row = mysqli_fetch_assoc($about_r)){
+                        echo<<<data
+                            <div class="swiper-slide bg-white text-center overflow-hidden rounded">
+                                <img src="$path$row[picture]" class="team-img card-img rounded shadow img-fluid w-30 h-30" alt="Team Image" style="width: 50%; height: 50%;">
+                                <h5 class="mt-2">$row[name]</h5>
+                            </div>
+                        data;
+                    }
+                ?>
             </div>
         </div>
     </div>
