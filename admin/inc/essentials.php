@@ -3,11 +3,13 @@
     // Frontend purpose data
     define('SITE_URL', 'http://localhost/hotel-booking-website/');
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
+    define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
 
     // Backend Upload Process needs this data. 
 
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hotel-booking-website/images/');
     define('ABOUT_FOLDER','about/');
+    define('CAROUSEL_FOLDER','carousel/');
 
     function adminLogin() {
         session_start();

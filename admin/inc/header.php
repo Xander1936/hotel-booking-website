@@ -26,7 +26,7 @@
                                     <a href="rooms.php" class="nav-link text-white">Rooms</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="users.php" class="nav-link text-white">Users</a>
+                                    <a href="carousel.php" class="nav-link text-white">Carousel</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="settings.php" class="nav-link text-white">Settings</a>

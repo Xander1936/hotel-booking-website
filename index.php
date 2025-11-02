@@ -17,24 +17,20 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_1.png" class="w-100 d-block" alt="Carousel Image 1">
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_2.png" class="w-100 d-block" alt="Carousel Image 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_3.png" class="w-100 d-block" alt="Carousel Image 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_4.png" class="w-100 d-block" alt="Carousel Image 4">
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_5.png" class="w-100 d-block" alt="Carousel Image 5">
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/IMG_6.png" class="w-100 d-block" alt="Carousel Image 6">
-                </div>
+                <?php 
+                    $res = selectAll('carousel');
+                    
+                    while($row = mysqli_fetch_assoc($res)){
+                        // $path = ABOUT_FOLDER.$row['picture'];
+                        $path = CAROUSEL_IMG_PATH;
+                        echo <<<data
+                            <div class="swiper-slide">
+                                <img src="$path$row[image]" class="w-100 d-block" alt="Carousel Image 1">
+                            </div>
+                        data;
+                    }
+                ?>
+                
             </div>  
         </div>
     </div>
