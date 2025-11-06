@@ -23,7 +23,7 @@
                                     <a href="dashboard.php" class="nav-link text-white">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="rooms.php" class="nav-link text-white">Rooms</a>
+                                    <a href="user_queries.php" class="nav-link text-white">User Queries</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="carousel.php" class="nav-link text-white">Carousel</a>
