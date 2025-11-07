@@ -29,15 +29,21 @@
         $frm_data = filteration($_GET);
 
         if($frm_data['del'] == 'all'){
-        
+            $q = "DELETE FROM `user_queries` ";
+            
+            if(mysqli_query($con,$q)){
+                alert('success','All data deleted!');
+            }else{
+                alert('error', 'Operation Failed');
+            }
         }else {
             $q = "DELETE FROM `user_queries` WHERE `sr_no`=?";
-                $values = [$frm_data['del']];
-                if(delete($q,$values,'i')){
-                    alert('success','Data deleted!');
-                }else{
-                    alert('error', 'Operation Failed');
-                }
+            $values = [$frm_data['del']];
+            if(delete($q,$values,'i')){
+                alert('success','Data deleted!');
+            }else{
+                alert('error', 'Operation Failed');
+            }
         }
     }
 ?>
@@ -108,9 +114,9 @@
                                             while($row = mysqli_fetch_assoc($data)){
                                                 $seen = '';
                                                 if($row['seen'] != 1){
-                                                    $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a>";
+                                                    $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a> <br>";
                                                 }
-                                                $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom mt-2'>Delete</a>";
+                                                $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom'>Delete</a>";
 
                                                 echo <<<query
                                                     <tr>
