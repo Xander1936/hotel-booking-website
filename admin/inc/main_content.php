@@ -41,7 +41,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="resetGeneralSettings()" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit" class="btn custom-bg btn-outline-dark shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
@@ -195,7 +195,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="contacts_inp(contacts_data)" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit" class="btn custom-bg btn-outline-dark shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
@@ -246,7 +246,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                <button type="submit" class="btn custom-bg btn-outline-dark shadow-none">SUBMIT</button>
                             </div>
                         </div>
                     </form>
