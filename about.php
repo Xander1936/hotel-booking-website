@@ -87,6 +87,7 @@
         MANAGEMENT TEAM
     </h3>
     <br>
+
     <div class="container px-4">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
@@ -95,8 +96,8 @@
                     $path = ABOUT_IMG_PATH;
                     while($row = mysqli_fetch_assoc($about_r)){
                         echo<<<data
-                            <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                                <img src="$path$row[picture]" class="team-img card-img rounded shadow img-fluid w-30 h-30" alt="Team Image" style="width: 50%; height: 50%;">
+                            <div class="swiper-slide bg-white d-flex flex-column align-items-center text-center overflow-hidden rounded shadow border-top border-4 pt-3" style="width: 160px; height: 250px;">
+                                <img src="$path$row[picture]" class="team-img card-img rounded shadow img-fluid" alt="Team Image" style="width: 150px; height: 200px; object-fit: cover;">
                                 <h5 class="mt-2">$row[name]</h5>
                             </div>
                         data;
