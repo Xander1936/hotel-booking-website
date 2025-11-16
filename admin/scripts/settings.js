@@ -11,6 +11,8 @@
     let member_name_inp = document.getElementById('member_name_inp');
     let member_picture_inp = document.getElementById('member_picture_inp');
 
+    let feature_s_form = document.getElementById('feature_s_form');
+
     function get_general(){
         const site_title = document.getElementById('site_title');
         const site_about = document.getElementById('site_about');

@@ -31,10 +31,10 @@
             // $path = ABOUT_FOLDER.$row['picture'];
             $path = CAROUSEL_IMG_PATH;
             echo <<<data
-            <div class="col-md-4 mb-3" style="width: 200px; height: auto;">
-            <div class="card bg-dark text-white">
+            <div class="col-md-4 mb-3" style="width: 400px; height: auto;">
+            <div class="card bg-dark text-white w-100" style="width: auto; height: 200px;">
                         <!-- <img src="http://localhost/hotel-booking-website/images/about/team.jpg" class="card-img" alt="Team Image"> -->
-                        <img src="$path$row[image]" class="card-img" alt="Carousel Image" style="width: 100%; height: 200px;">
+                        <img src="$path$row[image]" class="card-img" alt="Carousel Image" style="width: auto; height: 200px;">
                         <div class="card-img-overlay d-flex text-end">
                             <button type="button" onclick="rem_image($row[sr_no])" class="btn btn-danger btn-sm ms-auto shadow-none" style="height: 30px; width: auto;">
                                 <i class="bi bi-trash"></i> Delete

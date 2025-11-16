@@ -23,7 +23,11 @@
                     <li class="nav-item"><a class="nav-link me-2" href="contact.php">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                 </ul>
-                <div class="d-flex" role="search">
+                <form class="d-flex me-auto mb-2 mb-lg-0" role="search">
+                    <input class="form-control me-2 w-50" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="d-flex me-3 mb-2 mb-lg-0">
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                     <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
                 </div>

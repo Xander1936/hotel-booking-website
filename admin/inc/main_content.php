@@ -252,8 +252,6 @@
                     </form>
                 </div>
             </div>
-            
-            
             <!-- Management Team Modal Ends -->
             
         

@@ -18,10 +18,13 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="collapse navbar-collapse flex-column align-items-stretch mt-1" id="adminDropdown">
+                        <div class="collapse navbar-collapse flex-column text-align-center align-items-stretch mt-1" id="adminDropdown">
                             <ul class="nav nav-pills flex-column">
                                 <li class="nav-item">
                                     <a href="dashboard.php" class="nav-link text-white">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="features_facilities.php" class="nav-link text-white">Features & Facilities</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="user_queries.php" class="nav-link text-white">User Queries</a>
