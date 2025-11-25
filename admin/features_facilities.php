@@ -3,6 +3,26 @@
     require('inc/db_config.php');
     adminLogin();
 
+    if(isset($_POST['add_feature'])) {
+        $frm_data = filteration($_POST);
+
+        // Validate the incoming data
+        if (!empty($frm_data['name'])) {
+            $q = "INSERT INTO `features`(`name`) VALUES (?)";
+            $values = [$frm_data['name']];
+            $res = insert($q, $values, 's');
+
+            // Return success if inserted
+            if ($res !== 0 ) {
+                echo 1; // Success response
+            } else if($res === 0) {
+                echo 0; // Failure response
+            }
+        } else {
+            echo 'invalid_input'; // Handle invalid input scenario
+        }
+    }
+
     if(isset($_GET['seen'])){
         $frm_data = filteration($_GET);
 
@@ -150,7 +170,7 @@
         <!-- Feature Modal Section Starts -->
             <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <form id="team_s_form">
+                    <form id="feature_s_form">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Add Feature</h5>
@@ -159,7 +179,7 @@
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Name</label>
-                                    <input type="text" name="feature_name" id="feature_name" class="form-control shadow-none" required>
+                                    <input type="text" name="feature_name" class="form-control shadow-none" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -172,71 +192,43 @@
             </div>
         <!-- Feature Modal Ends -->
 
+        <?php 
+            require('inc/scripts.php');
+        ?>
         
-
-        <script src="scripts/settings.js">
+        <script>
             let feature_s_form = document.getElementById('feature_s_form');
 
-            feature_s_form.addEventListener('submit', function(e){
+            feature_s_form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 add_feature();
             });
 
-            function add_feature(){
+            function add_feature() {
                 let data = new FormData();
                 data.append('name', feature_s_form.elements['feature_name'].value);
                 data.append('add_feature','');
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/admin/ajax/features_facilities.php", true);
-                
-                xhr.onload = function(){
-                    // console.log(this.responseText);
+                xhr.open("POST", "features_facilities.php", true); // Ensure the correct path
+
+                xhr.onload = function() {
                     var myModal = document.getElementById('feature-s');
                     var modal = bootstrap.Modal.getInstance(myModal);
                     modal.hide();
 
-                    if (this.responseText == 1){
-                        alert('success', 'New feature added!');
-                        feature_s_form.elements['feature_name'].value = '';
-                        // get_members();
-                        
+                    // Check response from server
+                    if (this.responseText === 0) {
+                        alert('error', this.responseText === 'invalid_input' ? 'Please enter a valid feature name.' : 'Server Down! Try again!');
+                    } else {
+                        alert('success', 'New feature added!' );
+                        feature_s_form.reset(); // Reset the form
                     }
-                    else{
-                        alert('error', 'Server Down! Try again!');   
-                    }
-
                 };
 
-                xhr.send(data); 
+                xhr.send(data);
             }
-
-            // function add_feature() {
-            //     let data = new FormData(feature_s_form); // Directly use the form data
-            //     data.append('add_feature', true); // Use 'true' for the flag
-
-            //     let xhr = new XMLHttpRequest();
-            //     xhr.open("POST", "ajax/features_facilities.php", true);
-                
-            //     xhr.onload = function() {
-            //         var myModal = document.getElementById('feature-s');
-            //         var modal = bootstrap.Modal.getInstance(myModal);
-            //         modal.hide();
-
-            //         // Handling the response text
-            //         if (this.responseText.trim() == '1') { // Ensure to trim whitespace
-            //             alert('success', 'New feature added!');
-            //             feature_s_form.reset(); // Resets the form after successful submission
-            //         } else {
-            //             alert('error', 'Server Down! Try again!');   
-            //         }
-            //     };
-
-            //     xhr.send(data); 
-            // }
         </script>
-        <?php 
-            require('inc/scripts.php');
-        ?>   
+        
     </body>
 </html>
