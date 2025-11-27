@@ -113,48 +113,46 @@
                                 </button>
                             </div>
 
-                            <div class="table-responsive-md" style="height: 450px; overflow-y: scroll;">
+                            <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
                                 <table class="table table-hover border">
                                     <thead class="sticky-top">
                                         <tr class="table-dark text-light">
                                             <th scope="col">#</th>
                                             <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col" width="20%">Subject</th>
-                                            <th scope="col" width="20%">Message</th>
-                                            <th scope="col">Date</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <?php 
-                                            $q = "SELECT * FROM `user_queries` ORDER BY `sr_no` DESC";
-                                            $data = mysqli_query($con, $q);
-                                            $i = 1;
+                                    <tbody id="features-data">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
 
-                                            while($row = mysqli_fetch_assoc($data)){
-                                                $seen = '';
-                                                if($row['seen'] != 1){
-                                                    $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a> <br>";
-                                                }
-                                                $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom'>Delete</a>";
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5 class="card-title m-0">Facilities</h5>
+                                <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#facility-s">
+                                    <i class="bi bi-plus-square"></i> Add
+                                </button>
+                            </div>
 
-                                                echo <<<query
-                                                    <tr>
-                                                        <td scope="row">$i</td>
-                                                        <td>$row[name]</td>
-                                                        <td>$row[email]</td>
-                                                        <td>$row[subject]</td>
-                                                        <td>$row[message]</td>
-                                                        <td>$row[date]</td>
-                                                        <td class="action-buttons">
-                                                            $seen
-                                                        </td>
-                                                    </tr>
-                                                query;
-                                                $i++;
-                                            }
-                                        ?>
+                            <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
+                                <table class="table table-hover border">
+                                    <thead class="sticky-top">
+                                        <tr class="table-dark text-light">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Icon</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="facilities-data">
                                         
                                     </tbody>
                                 </table>
@@ -192,6 +190,32 @@
             </div>
         <!-- Feature Modal Ends -->
 
+        <!-- Facilities Modal Section Starts -->
+            <div class="modal fade" id="facility-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form id="facility_s_form">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Facility</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Name</label>
+                                    <input type="text" name="feature_name" class="form-control shadow-none" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="reset"  class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                <button type="submit" class="btn custom-bg btn-outline-dark shadow-none">SUBMIT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <!-- Facilities Modal Section Ends -->
+
+
         <?php 
             require('inc/scripts.php');
         ?>
@@ -222,12 +246,53 @@
                         alert('error', this.responseText === 'invalid_input' ? 'Please enter a valid feature name.' : 'Server Down! Try again!');
                     } else {
                         alert('success', 'New feature added!' );
+                        get_features();
                         feature_s_form.reset(); // Reset the form
                     }
                 };
 
                 xhr.send(data);
             }
+
+            function get_features(){
+                
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "../../hotel-booking-website/admin/ajax/features_facilities.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function(){
+                    document.getElementById('features-data').innerHTML = this.responseText;
+                };
+
+                xhr.send('get_features');
+            }
+
+            function rem_feature(val){
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/features_facilities.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function(){
+
+                    if(this.responseText == 1){
+                        alert('success', 'Feature removed!');
+                        get_features();
+                    }else if(this.responseText == 'room_added'){
+                        alert('error', 'Feature is added in room!');
+                    }else{
+                        alert('error', 'Server down! ');
+                    }
+                };
+
+                xhr.send('rem_feature='+val);
+            }
+
+
+            windows.onload = function() {
+                get_features();
+            }
+
         </script>
         
     </body>

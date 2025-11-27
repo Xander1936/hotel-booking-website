@@ -3,46 +3,70 @@
     require('inc/db_config.php');
     adminLogin();
 
+    // Initialize alert message
+    $alert_message = '';
+
     if(isset($_GET['seen'])){
         $frm_data = filteration($_GET);
-
         if($frm_data['seen'] == 'all'){
             $q = "UPDATE `user_queries` SET `seen`=? ";
             $values = [1];
             if(update($q,$values,'i')){
-                alert('success','Marked all as read!');
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Marked all as read! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }else{
-                alert('error', 'Operation Failed');
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
-        }else {
+        } else {
             $q = "UPDATE `user_queries` SET `seen`=? WHERE `sr_no`=?";
             $values = [1,$frm_data['seen']];
             if(update($q,$values,'ii')){
-                alert('success','Marked as read!');
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Marked as read! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }else{
-                alert('error', 'Operation Failed');
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         }
     }
 
     if(isset($_GET['del'])){
         $frm_data = filteration($_GET);
-
         if($frm_data['del'] == 'all'){
             $q = "DELETE FROM `user_queries` ";
-            
             if(mysqli_query($con,$q)){
-                alert('success','All data deleted!');
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    All data deleted! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }else{
-                alert('error', 'Operation Failed');
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
-        }else {
+        } else {
             $q = "DELETE FROM `user_queries` WHERE `sr_no`=?";
             $values = [$frm_data['del']];
             if(delete($q,$values,'i')){
-                alert('success','Data deleted!');
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Data deleted! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }else{
-                alert('error', 'Operation Failed');
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         }
     }
@@ -50,103 +74,102 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Panel - User Queries</title>
-        <?php 
-            require("../admin/inc/links.php");
-        ?>
-        <style>
-            /* Custom CSS to adjust button size and alignment */
-            .btn-custom {
-                min-width: 100px;  /* Set a minimum width for the button */
-                padding: 10px 20px; /* Adjust padding */
-                font-size: 14px; /* Set font size */
-                margin: 0 5px; /* Add some margin between buttons */
-            }
-            .action-buttons {
-                display: flex; /* Use flexbox for alignment */
-                flex-direction: column; /* Stack buttons vertically */
-            }
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - User Queries</title>
+    <?php require("../admin/inc/links.php"); ?>
+    <style>
+        /* Custom CSS to adjust button size and alignment */
+        .btn-custom {
+            min-width: 100px;  /* Set a minimum width for the button */
+            padding: 10px 20px; /* Adjust padding */
+            font-size: 14px; /* Set font size */
+            margin: 0 5px; /* Add some margin between buttons */
+        }
+        .action-buttons {
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack buttons vertically */
+        }
+    </style>
+</head>
 
-    <body class="bg-light">
+<body class="bg-light">
 
-        <?php require("../admin/inc/header.php"); ?>
-        
-        <div class="container-fluid" id="main-content">
-            <div class="row">
-                <div class="col-lg-10 ms-3 p-3 overflow-hidden">
-                    <h3 class="mb-4">USER QUERIES</h3>
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">  
-                            <div class="text-end mb-4">
-                                <a href="?seen=all" class="btn btn-dark rounded-pill shadow-none btn-sm">
-                                    <i class="bi bi-check-all"></i> Mark all read
-                                </a>
-                                <a href="?del=all" class="btn btn-danger rounded-pill shadow-none btn-sm">
-                                    <i class="bi bi-trash"></i> Delete all
-                                </a>
-                            </div>
+    <?php require("../admin/inc/header.php"); ?>
 
-                            <div class="table-responsive-md" style="height: 450px; overflow-y: scroll;">
-                                <table class="table table-hover border">
-                                    <thead class="sticky-top">
-                                        <tr class="table-dark text-light">
-                                            <th scope="col">#</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col" width="10%">Email</th>
-                                            <th scope="col" width="20%">Subject</th>
-                                            <th scope="col" width="20%">Message</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                            $q = "SELECT * FROM `user_queries` ORDER BY `sr_no` DESC";
-                                            $data = mysqli_query($con, $q);
-                                            $i = 1;
+    <div class="container-fluid" id="main-content">
+        <div class="row">
+            <div class="col-lg-10 ms-3 p-3 overflow-hidden">
+                <h3 class="mb-4">USER QUERIES</h3>
+                <!-- Display Alert here -->
+                <?php if($alert_message) echo $alert_message; ?>
 
-                                            while($row = mysqli_fetch_assoc($data)){
-                                                $seen = '';
-                                                if($row['seen'] != 1){
-                                                    $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a> <br>";
-                                                }
-                                                $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom'>Delete</a>";
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">  
+                        <div class="text-end mb-4">
+                            <a href="?seen=all" class="btn btn-dark rounded-pill shadow-none btn-sm">
+                                <i class="bi bi-check-all"></i> Mark all read
+                            </a>
+                            <a href="?del=all" class="btn btn-danger rounded-pill shadow-none btn-sm">
+                                <i class="bi bi-trash"></i> Delete all
+                            </a>
+                        </div>
 
-                                                echo <<<query
-                                                    <tr>
-                                                        <td scope="row">$i</td>
-                                                        <td>$row[name]</td>
-                                                        <td>$row[email]</td>
-                                                        <td>$row[subject]</td>
-                                                        <td>$row[message]</td>
-                                                        <td>$row[date]</td>
-                                                        <td class="action-buttons">
-                                                            $seen
-                                                        </td>
-                                                    </tr>
-                                                query;
-                                                $i++;
+                        <div class="table-responsive-md" style="height: 450px; overflow-y: scroll;">
+                            <table class="table table-hover border">
+                                <thead class="sticky-top">
+                                    <tr class="table-dark text-light">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col" width="10%">Email</th>
+                                        <th scope="col" width="20%">Subject</th>
+                                        <th scope="col" width="20%">Message</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                        $q = "SELECT * FROM `user_queries` ORDER BY `sr_no` DESC";
+                                        $data = mysqli_query($con, $q);
+                                        $i = 1;
+
+                                        while($row = mysqli_fetch_assoc($data)){
+                                            $seen = '';
+                                            if($row['seen'] != 1){
+                                                $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a> <br>";
                                             }
-                                        ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                            
+                                            $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom'>Delete</a>";
+
+                                            echo <<<query
+                                                <tr>
+                                                    <td scope="row">$i</td>
+                                                    <td>$row[name]</td>
+                                                    <td>$row[email]</td>
+                                                    <td>$row[subject]</td>
+                                                    <td>$row[message]</td>
+                                                    <td>$row[date]</td>
+                                                    <td class="action-buttons">
+                                                        $seen
+                                                    </td>
+                                                </tr>
+                                            query;
+                                            $i++;
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    
-                </div>    
-            </div>
-        </div>
-
-        <?php require('inc/scripts.php'); ?>
+                </div>
                 
-    </body>
+            </div>    
+        </div>
+    </div>
+
+    <?php require('inc/scripts.php'); ?>
+            
+</body>
 </html>
