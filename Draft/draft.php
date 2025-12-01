@@ -1,71 +1,74 @@
 <?php 
-    // Include essentials.php which will manage session initialization.
-    require('inc/essentials.php'); // Ensure session_start() is managed here
+    require('inc/essentials.php');
     require('inc/db_config.php');
     adminLogin();
 
     // Initialize alert message
     $alert_message = '';
 
-    if (isset($_GET['seen'])) {
+    if(isset($_GET['seen'])){
         $frm_data = filteration($_GET);
-        if ($frm_data['seen'] == 'all') {
+        if($frm_data['seen'] == 'all'){
             $q = "UPDATE `user_queries` SET `seen`=? ";
             $values = [1];
-            if (update($q, $values, 'i')) {
-                $_SESSION['alert_message'] = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
-                                                  Marked all as read! 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
+            if(update($q,$values,'i')){
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Marked all as read! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
+            }else{
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         } else {
             $q = "UPDATE `user_queries` SET `seen`=? WHERE `sr_no`=?";
-            $values = [1, $frm_data['seen']];
-            if (update($q, $values, 'ii')) {
-                $_SESSION['alert_message'] = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
-                                                  Marked as read! 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
+            $values = [1,$frm_data['seen']];
+            if(update($q,$values,'ii')){
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Marked as read! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
+            }else{
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         }
     }
 
-    if (isset($_GET['del'])) {
+    if(isset($_GET['del'])){
         $frm_data = filteration($_GET);
-        if ($frm_data['del'] == 'all') {
+        if($frm_data['del'] == 'all'){
             $q = "DELETE FROM `user_queries` ";
-            if (mysqli_query($con, $q)) {
-                $_SESSION['alert_message'] = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
-                                                  All data deleted! 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
-            } else {
-                $_SESSION['alert_message'] = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
-                                                  Operation Failed 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
+            if(mysqli_query($con,$q)){
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    All data deleted! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
+            }else{
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         } else {
             $q = "DELETE FROM `user_queries` WHERE `sr_no`=?";
             $values = [$frm_data['del']];
-            if (delete($q, $values, 'i')) {
-                $_SESSION['alert_message'] = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
-                                                  Data deleted! 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
-            } else {
-                $_SESSION['alert_message'] = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
-                                                  Operation Failed 
-                                                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                              </div>";
+            if(delete($q,$values,'i')){
+                $alert_message = "<div class='alert alert-success alert-dismissible' style='width: 200px;'> 
+                                    Data deleted! 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
+            }else{
+                $alert_message = "<div class='alert alert-danger alert-dismissible' style='width: 200px;'> 
+                                    Operation Failed 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                  </div>";
             }
         }
-    }
-
-    // Check if there is an alert message in session
-    if (isset($_SESSION['alert_message'])) {
-        $alert_message = $_SESSION['alert_message'];
-        unset($_SESSION['alert_message']); // Clear the message after displaying
     }
 ?>
 
@@ -101,7 +104,7 @@
             <div class="col-lg-10 ms-3 p-3 overflow-hidden">
                 <h3 class="mb-4">USER QUERIES</h3>
                 <!-- Display Alert here -->
-                <?php if ($alert_message) echo $alert_message; ?>
+                <?php if($alert_message) echo $alert_message; ?>
 
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">  
@@ -133,9 +136,9 @@
                                         $data = mysqli_query($con, $q);
                                         $i = 1;
 
-                                        while ($row = mysqli_fetch_assoc($data)) {
+                                        while($row = mysqli_fetch_assoc($data)){
                                             $seen = '';
-                                            if ($row['seen'] != 1) {
+                                            if($row['seen'] != 1){
                                                 $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-success btn-custom'>Mark as read</a> <br>";
                                             }
                                             $seen .= "<a href='?del=$row[sr_no]' class='btn btn-sm rounded-pill btn-danger btn-custom'>Delete</a>";
