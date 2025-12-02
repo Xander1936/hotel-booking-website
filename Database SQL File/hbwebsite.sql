@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 05 nov. 2025 à 14:34
+-- Généré le : mar. 02 déc. 2025 à 17:57
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -58,12 +58,12 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`sr_no`, `image`) VALUES
-(9, 'IMG_52083png'),
-(10, 'IMG_69353png'),
-(11, 'IMG_75779png'),
-(12, 'IMG_67298png'),
-(13, 'IMG_92053png'),
-(14, 'IMG_66302png');
+(16, 'IMG_42584png'),
+(18, 'IMG_34156png'),
+(19, 'IMG_28093png'),
+(20, 'IMG_42506png'),
+(21, 'IMG_44234png'),
+(22, 'IMG_84896png');
 
 -- --------------------------------------------------------
 
@@ -90,6 +90,40 @@ CREATE TABLE `contact_details` (
 
 INSERT INTO `contact_details` (`sr_no`, `address`, `gmap`, `pn1`, `pn2`, `email`, `fb`, `insta`, `tw`, `iframe`) VALUES
 (1, 'XYZ, Prayagraj, Uttar Pradesh', 'https://maps.app.goo.gl/tZ3ePBTHypVZSAMZ7', 237696644422, 237699894324, 'info@xanderhotel.com', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d461321.73752665165!2d81.801585!3d25.402264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f:0xa2237856ad4041a!2zRGl2aXNpb24gZCdBbGzDomjDomLDomQsIFV0dGFyIFByYWRlc2gsIEluZGU!5e0!3m2!1sfr!2scm!4v1761554044106!5m2!1sfr!2scm');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `facilities`
+--
+
+CREATE TABLE `facilities` (
+  `id` int(11) NOT NULL,
+  `icon` varchar(100) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `features`
+--
+
+CREATE TABLE `features` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `features`
+--
+
+INSERT INTO `features` (`id`, `name`) VALUES
+(17, 'Now'),
+(18, 'Great'),
+(19, 'Now'),
+(23, 'Good');
 
 -- --------------------------------------------------------
 
@@ -131,7 +165,8 @@ INSERT INTO `team_details` (`sr_no`, `name`, `picture`) VALUES
 (5, 'Xander', 'IMG_80770jpg'),
 (20, 'Super Classe', 'IMG_68394png'),
 (30, 'Eben', 'IMG_19650jpeg'),
-(31, 'Gohan', 'IMG_82429png');
+(31, 'Gohan', 'IMG_82429png'),
+(32, 'DBZ Team', 'IMG_74361png');
 
 -- --------------------------------------------------------
 
@@ -154,8 +189,18 @@ CREATE TABLE `user_queries` (
 --
 
 INSERT INTO `user_queries` (`sr_no`, `name`, `email`, `subject`, `message`, `date`, `seen`) VALUES
-(11, 'Xander', 'lexrv3m@yahoo.fr', 'abcdefg', 'First attempt to send a mail.', '2025-11-04', 1),
-(12, 'Lex', 'alexandremassoda@hotmail.com', 'abcdefg', 'Second attempt to send a mail.', '2025-11-04', 0);
+(45, 'LB J', 'lexrv3m@yahoo.fr', 'abc', 'QSD', '2025-11-27', 0),
+(46, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-27', 0),
+(47, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-28', 0),
+(48, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-29', 0),
+(49, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-30', 0),
+(50, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-30', 0),
+(51, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-30', 0),
+(52, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-30', 0),
+(53, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-11-30', 0),
+(54, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-12-01', 0),
+(55, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-12-02', 0),
+(56, 'Xander', 'info@xanderhotel.com', 'abcefgh', 'Good', '2025-12-02', 0);
 
 --
 -- Index pour les tables déchargées
@@ -178,6 +223,18 @@ ALTER TABLE `carousel`
 --
 ALTER TABLE `contact_details`
   ADD PRIMARY KEY (`sr_no`);
+
+--
+-- Index pour la table `facilities`
+--
+ALTER TABLE `facilities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `features`
+--
+ALTER TABLE `features`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `settings`
@@ -211,13 +268,25 @@ ALTER TABLE `admin_cred`
 -- AUTO_INCREMENT pour la table `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `contact_details`
 --
 ALTER TABLE `contact_details`
   MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `facilities`
+--
+ALTER TABLE `facilities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `features`
+--
+ALTER TABLE `features`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT pour la table `settings`
@@ -229,13 +298,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pour la table `team_details`
 --
 ALTER TABLE `team_details`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `user_queries`
 --
 ALTER TABLE `user_queries`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
